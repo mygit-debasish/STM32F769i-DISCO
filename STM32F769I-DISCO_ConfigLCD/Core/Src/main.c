@@ -195,7 +195,7 @@ int main(void)
 
 	BSP_LCD_SetTextColor(LCD_COLOR_BLUE);
 	BSP_LCD_SetBackColor(LCD_COLOR_GREEN);
-	BSP_LCD_DisplayStringAtLine(10, (uint8_t*) " Good Morning DHYANSHI :)");
+	BSP_LCD_DisplayStringAtLine(10, (uint8_t*) " Good Morning STM32F769I-DISCO :)");
 	BSP_LCD_DisplayStringAtLine(12, (uint8_t*) " Have a NICE DAY ");
 
 	writetoSerial(&huart1, "Configuring LCD in STM32F769I-DISCO ! \r\n");
