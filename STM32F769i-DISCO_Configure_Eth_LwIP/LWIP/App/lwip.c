@@ -1,21 +1,21 @@
 /* USER CODE BEGIN Header */
 /**
  ******************************************************************************
-  * File Name          : LWIP.c
-  * Description        : This file provides initialization code for LWIP
-  *                      middleWare.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2026 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ * File Name          : LWIP.c
+ * Description        : This file provides initialization code for LWIP
+ *                      middleWare.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2026 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -28,6 +28,9 @@
 #include "ethernetif.h"
 
 /* USER CODE BEGIN 0 */
+
+#include "custom.h"
+#include "customLwIP.h"
 
 /* USER CODE END 0 */
 /* Private function prototypes -----------------------------------------------*/
@@ -55,36 +58,37 @@ ip4_addr_t gw;
 /* USER CODE END 2 */
 
 /**
-  * LwIP initialization function
-  */
+ * LwIP initialization function
+ */
 void MX_LWIP_Init(void)
 {
-  /* Initialize the LwIP stack without RTOS */
-  lwip_init();
+	/* Initialize the LwIP stack without RTOS */
+	lwip_init();
 
-  /* IP addresses initialization with DHCP (IPv4) */
-  ipaddr.addr = 0;
-  netmask.addr = 0;
-  gw.addr = 0;
+	/* IP addresses initialization with DHCP (IPv4) */
+	ipaddr.addr = 0;
+	netmask.addr = 0;
+	gw.addr = 0;
 
-  /* add the network interface (IPv4/IPv6) without RTOS */
-  netif_add(&gnetif, &ipaddr, &netmask, &gw, NULL, &ethernetif_init, &ethernet_input);
+	/* add the network interface (IPv4/IPv6) without RTOS */
+	netif_add(&gnetif, &ipaddr, &netmask, &gw, NULL, &ethernetif_init,
+			&ethernet_input);
 
-  /* Registers the default network interface */
-  netif_set_default(&gnetif);
+	/* Registers the default network interface */
+	netif_set_default(&gnetif);
 
-  /* We must always bring the network interface up connection or not... */
-  netif_set_up(&gnetif);
+	/* We must always bring the network interface up connection or not... */
+	netif_set_up(&gnetif);
 
-  /* Set the link callback function, this function is called on change of link status*/
-  netif_set_link_callback(&gnetif, ethernet_link_status_updated);
+	/* Set the link callback function, this function is called on change of link status*/
+	netif_set_link_callback(&gnetif, ethernet_link_status_updated);
 
-  /* Start DHCP negotiation for a network interface (IPv4) */
-  dhcp_start(&gnetif);
+	/* Start DHCP negotiation for a network interface (IPv4) */
+	dhcp_start(&gnetif);
 
-/* USER CODE BEGIN 3 */
+	/* USER CODE BEGIN 3 */
 
-/* USER CODE END 3 */
+	/* USER CODE END 3 */
 }
 
 #ifdef USE_OBSOLETE_USER_CODE_SECTION_4
@@ -95,23 +99,23 @@ void MX_LWIP_Init(void)
 #endif
 
 /**
-  * @brief  Ethernet Link periodic check
-  * @param  netif
-  * @retval None
-  */
+ * @brief  Ethernet Link periodic check
+ * @param  netif
+ * @retval None
+ */
 static void Ethernet_Link_Periodic_Handle(struct netif *netif)
 {
-/* USER CODE BEGIN 4_4_1 */
-/* USER CODE END 4_4_1 */
+	/* USER CODE BEGIN 4_4_1 */
+	/* USER CODE END 4_4_1 */
 
-  /* Ethernet Link every 100ms */
-  if (HAL_GetTick() - EthernetLinkTimer >= 100)
-  {
-    EthernetLinkTimer = HAL_GetTick();
-    ethernet_link_check_state(netif);
-  }
-/* USER CODE BEGIN 4_4 */
-/* USER CODE END 4_4 */
+	/* Ethernet Link every 100ms */
+	if (HAL_GetTick() - EthernetLinkTimer >= 100)
+	{
+		EthernetLinkTimer = HAL_GetTick();
+		ethernet_link_check_state(netif);
+	}
+	/* USER CODE BEGIN 4_4 */
+	/* USER CODE END 4_4 */
 }
 
 /**
@@ -127,38 +131,42 @@ static void Ethernet_Link_Periodic_Handle(struct netif *netif)
  */
 void MX_LWIP_Process(void)
 {
-/* USER CODE BEGIN 4_1 */
-/* USER CODE END 4_1 */
-  ethernetif_input(&gnetif);
+	/* USER CODE BEGIN 4_1 */
+	/* USER CODE END 4_1 */
+	ethernetif_input(&gnetif);
 
-/* USER CODE BEGIN 4_2 */
-/* USER CODE END 4_2 */
-  /* Handle timeouts */
-  sys_check_timeouts();
+	/* USER CODE BEGIN 4_2 */
+	/* USER CODE END 4_2 */
+	/* Handle timeouts */
+	sys_check_timeouts();
 
-  Ethernet_Link_Periodic_Handle(&gnetif);
+	Ethernet_Link_Periodic_Handle(&gnetif);
 
-/* USER CODE BEGIN 4_3 */
-/* USER CODE END 4_3 */
+	/* USER CODE BEGIN 4_3 */
+	/* USER CODE END 4_3 */
 }
 
 /**
-  * @brief  Notify the User about the network interface config status
-  * @param  netif: the network interface
-  * @retval None
-  */
+ * @brief  Notify the User about the network interface config status
+ * @param  netif: the network interface
+ * @retval None
+ */
 static void ethernet_link_status_updated(struct netif *netif)
 {
-  if (netif_is_up(netif))
-  {
-/* USER CODE BEGIN 5 */
-/* USER CODE END 5 */
-  }
-  else /* netif is down */
-  {
-/* USER CODE BEGIN 6 */
-/* USER CODE END 6 */
-  }
+	if (netif_is_up(netif))
+	{
+		/* USER CODE BEGIN 5 */
+		writetoSerial(&huart1, "Ethernet link UP (Callback) \r\n");
+
+		/* USER CODE END 5 */
+	}
+	else /* netif is down */
+	{
+		/* USER CODE BEGIN 6 */
+		writetoSerial(&huart1, "Ethernet link DOWN (Callback) \r\n");
+
+		/* USER CODE END 6 */
+	}
 }
 
 #if defined ( __CC_ARM )  /* MDK ARM Compiler */
