@@ -156,14 +156,14 @@ static void ethernet_link_status_updated(struct netif *netif)
 	if (netif_is_up(netif))
 	{
 		/* USER CODE BEGIN 5 */
-		writetoSerial(&huart1, "Ethernet link UP (Callback) \r\n");
+		//writetoSerial(&huart1, "Ethernet link UP (Callback) \r\n");
 
 		/* USER CODE END 5 */
 	}
 	else /* netif is down */
 	{
 		/* USER CODE BEGIN 6 */
-		writetoSerial(&huart1, "Ethernet link DOWN (Callback) \r\n");
+		//writetoSerial(&huart1, "Ethernet link DOWN (Callback) \r\n");
 
 		/* USER CODE END 6 */
 	}

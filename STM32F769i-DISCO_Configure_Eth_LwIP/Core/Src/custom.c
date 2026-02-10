@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <inttypes.h>
 
 void _gettimeofday()
 {
@@ -132,4 +133,13 @@ void binaryToASCII(const uint8_t *pHex, uint16_t wHexLen, char *pAscii)
 			pAscii[count] = '.';
 	}
 	pAscii[count] = '\0';
+}
+
+void getCpuId()
+{
+	char aCpuID[20];
+	volatile uint32_t dwCpuID = SCB->CPUID;
+	snprintf(aCpuID, sizeof(aCpuID), "0x%" PRIX32, dwCpuID);;
+
+	writeASCIItoSerial(&huart1, ASCII, aCpuID, strlen(aCpuID), "CPU ID");
 }

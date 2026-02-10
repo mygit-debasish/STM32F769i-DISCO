@@ -116,6 +116,7 @@ int main(void)
 	size_t wMsgLen = 0;
 
 	writetoSerial(&huart1, "Searching network ...  \r\n");
+	getCpuId();
 
 	while (ip4_addr_isany_val(*netif_ip4_addr(&gnetif)))
 	{
@@ -142,7 +143,7 @@ int main(void)
 	while (1)
 	{
 		/* USER CODE END WHILE */
-		MX_LWIP_Process(); /*For checking PING ✅ */
+		MX_LWIP_Process(); /*For checking PING. Used to netif_set_link_callback ✅ */
 
 		/* USER CODE BEGIN 3 */
 	}

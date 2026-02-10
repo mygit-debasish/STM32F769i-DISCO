@@ -70,6 +70,8 @@ void writeASCIItoSerial(UART_HandleTypeDef *huart, uint8_t bFormat, const uint8_
 
 void binaryToASCII(const uint8_t *pHex, uint16_t wHexLen, char *pAscii);
 
+void getCpuId();
+
 typedef enum
 {
 	Device_ID = 0x0F,
