@@ -277,4 +277,5 @@
 			<resource resourceType="PROJECT" workspacePath="/STM32F769i-DISCO_Configure_Eth_LwIP"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

@@ -139,7 +139,44 @@ void getCpuId()
 {
 	char aCpuID[20];
 	volatile uint32_t dwCpuID = SCB->CPUID;
-	snprintf(aCpuID, sizeof(aCpuID), "0x%" PRIX32, dwCpuID);;
+	snprintf(aCpuID, sizeof(aCpuID), "0x%" PRIX32, dwCpuID);
+	;
 
 	writeASCIItoSerial(&huart1, ASCII, aCpuID, strlen(aCpuID), "CPU ID");
+}
+
+HAL_StatusTypeDef returnError()
+{
+	return HAL_ERROR;
+}
+HAL_StatusTypeDef returnSuccess()
+{
+	return HAL_OK;
+}
+
+void LOG_Error_Status(int bError, const char *pFile, uint8_t bLineNum,
+		const char *pFunName, const char *pMsg)
+{
+	int len = 0;
+	char aMsgBanner[MAX_ARR_SIZE];
+
+	len = snprintf(aMsgBanner, sizeof(aMsgBanner), "Error Code: %d ", bError);
+	len += snprintf(&aMsgBanner[len], sizeof(aMsgBanner) - len,
+			"File: %s : Line: %d : Function: %s : %s\r\n", pFile, bLineNum, pFunName, pMsg);
+
+	if(len <0 || len > sizeof(aMsgBanner))
+		return;
+
+	writetoSerial(&huart1, aMsgBanner);
+}
+
+const char* ErrorString(ERROR_t bError)
+{
+	switch(bError)
+	{
+	case FUN_NOERROR: 		return "No Error";
+	case FUN_ERROR: 		return "Function Error";
+	case FUN_ERROR_INVALID: return "Invalid function";
+	case FUN_ERROR_EMPTY: 	return "Empty Function";
+	}
 }

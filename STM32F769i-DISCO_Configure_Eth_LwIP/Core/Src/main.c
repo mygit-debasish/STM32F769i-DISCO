@@ -115,6 +115,9 @@ int main(void)
 	char aMsgBuff[MAX_ARR_SIZE];
 	size_t wMsgLen = 0;
 
+	/* Test some LL code */
+	CHECK_ERROR_STATUS(returnError());
+
 	writetoSerial(&huart1, "Searching network ...  \r\n");
 	getCpuId();
 

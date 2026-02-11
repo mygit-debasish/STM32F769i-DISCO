@@ -18,6 +18,29 @@ extern UART_HandleTypeDef huart5;
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart6;
 
+typedef enum
+{
+	FUN_NOERROR = 0,
+	FUN_ERROR,
+	FUN_ERROR_INVALID,
+	FUN_ERROR_EMPTY
+} ERROR_t;
+
+/* MACRO definition */
+
+#define CHECK_ERROR_STATUS(x) do {						\
+							ERROR_t retErr = (x);		\
+							if(retErr != FUN_NOERROR)	\
+							{							\
+								LOG_Error_Status(retErr,	\
+								__FILE__,			\
+								__LINE__,			\
+								__func__,			\
+								ErrorString(retErr));	\
+								return;				\
+			}\
+}while(0);
+
 #define SPI_READ 	0x80
 #define SPI_WRITE 	0x00
 
@@ -65,12 +88,15 @@ int *msgLenOut, uint32_t dwData, const char *pCustMsg);
 void writeHextoSerial(UART_HandleTypeDef *huart, const uint8_t *pArray,
 		int wArrSize);
 
-void writeASCIItoSerial(UART_HandleTypeDef *huart, uint8_t bFormat, const uint8_t *pArray,
-		int wArrSize, const char *pHeader);
+void writeASCIItoSerial(UART_HandleTypeDef *huart, uint8_t bFormat,
+		const uint8_t *pArray, int wArrSize, const char *pHeader);
 
 void binaryToASCII(const uint8_t *pHex, uint16_t wHexLen, char *pAscii);
 
 void getCpuId();
+
+void LOG_Error_Status(int bError, const char *pFile, uint8_t bLineNum,
+		const char *pFunName, const char *pMsg);
 
 typedef enum
 {
@@ -95,8 +121,14 @@ typedef enum
 
 typedef enum
 {
-	ASCII,
-	HEX,
+	ASCII, HEX,
 } printformat_t;
 
 #endif /* INC_CUSTOM_H_ */
+
+HAL_StatusTypeDef returnError();
+HAL_StatusTypeDef returnSuccess();
+
+const char* ErrorString(ERROR_t bError);
+
+
