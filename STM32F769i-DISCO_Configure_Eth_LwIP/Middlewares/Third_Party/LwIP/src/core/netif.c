@@ -97,7 +97,9 @@
 #endif /* LWIP_NETIF_STATUS_CALLBACK */
 
 #if LWIP_NETIF_LINK_CALLBACK
-#define NETIF_LINK_CALLBACK(n) do{ if (n->link_callback) { (n->link_callback)(n); }}while(0)
+#define NETIF_LINK_CALLBACK(n)	\
+			do{ if (n->link_callback) { (n->link_callback)(n); }	\
+			}while(0)
 #else
 #define NETIF_LINK_CALLBACK(n)
 #endif /* LWIP_NETIF_LINK_CALLBACK */
@@ -984,6 +986,11 @@ netif_set_remove_callback(struct netif *netif, netif_status_callback_fn remove_c
  * @ingroup netif
  * Called by a driver when its link goes up
  */
+
+/* Adding UART1 for debug */
+#include "custom.h"
+extern UART_HandleTypeDef huart1;
+
 void
 netif_set_link_up(struct netif *netif)
 {
@@ -1007,7 +1014,9 @@ netif_set_link_up(struct netif *netif)
     nd6_restart_netif(netif);
 #endif /* LWIP_IPV6 */
 
-    NETIF_LINK_CALLBACK(netif);
+    //writetoSerial(&huart1, "Going to call NETIF_LINK_CALLBACK function ..\r\n");
+
+    NETIF_LINK_CALLBACK(netif);		/* This the the point where callback is called */
 #if LWIP_NETIF_EXT_STATUS_CALLBACK
     {
       netif_ext_callback_args_t args;

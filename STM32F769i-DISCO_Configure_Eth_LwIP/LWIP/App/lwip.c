@@ -81,7 +81,7 @@ void MX_LWIP_Init(void)
 	netif_set_up(&gnetif);
 
 	/* Set the link callback function, this function is called on change of link status*/
-	netif_set_link_callback(&gnetif, ethernet_link_status_updated);
+	netif_set_link_callback(&gnetif, ethernet_link_status_updated); 	/* Just set the function pointer. NOT executing ✅ */
 
 	/* Start DHCP negotiation for a network interface (IPv4) */
 	dhcp_start(&gnetif);
@@ -156,14 +156,14 @@ static void ethernet_link_status_updated(struct netif *netif)
 	if (netif_is_up(netif))
 	{
 		/* USER CODE BEGIN 5 */
-		//writetoSerial(&huart1, "Ethernet link UP (Callback) \r\n");
+		//writetoSerial(&huart1, "Ethernet link UP Flag has been set \r\n");
 
 		/* USER CODE END 5 */
 	}
 	else /* netif is down */
 	{
 		/* USER CODE BEGIN 6 */
-		//writetoSerial(&huart1, "Ethernet link DOWN (Callback) \r\n");
+		//writetoSerial(&huart1, "Ethernet link UP Flag has not been set yet \r\n");
 
 		/* USER CODE END 6 */
 	}

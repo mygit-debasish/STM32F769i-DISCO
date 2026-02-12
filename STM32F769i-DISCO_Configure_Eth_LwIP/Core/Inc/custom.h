@@ -26,6 +26,8 @@ typedef enum
 	FUN_ERROR_EMPTY
 } ERROR_t;
 
+#define SERIAL_TX_BUFF_SIZE 80
+
 /* MACRO definition */
 
 #define CHECK_ERROR_STATUS(x) do {						\
@@ -93,6 +95,8 @@ void writeASCIItoSerial(UART_HandleTypeDef *huart, uint8_t bFormat,
 
 void binaryToASCII(const uint8_t *pHex, uint16_t wHexLen, char *pAscii);
 
+void writeFormatData(UART_HandleTypeDef *huart, const char *format, ...);
+
 void getCpuId();
 
 void LOG_Error_Status(int bError, const char *pFile, uint8_t bLineNum,
@@ -130,5 +134,6 @@ HAL_StatusTypeDef returnError();
 HAL_StatusTypeDef returnSuccess();
 
 const char* ErrorString(ERROR_t bError);
+
 
 

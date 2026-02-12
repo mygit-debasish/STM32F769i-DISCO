@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <inttypes.h>
+#include <stdarg.h>
 
 void _gettimeofday()
 {
@@ -180,3 +181,30 @@ const char* ErrorString(ERROR_t bError)
 	case FUN_ERROR_EMPTY: 	return "Empty Function";
 	}
 }
+
+void writeFormatData(UART_HandleTypeDef *huart, const char *format, ...)
+{
+	char txBuffer[SERIAL_TX_BUFF_SIZE];
+	va_list args;
+	int txBufferLen = 0;
+
+	/* Initialize variable argument list */
+	va_start(args, format);
+
+	/* Format the string */
+	txBufferLen = vsnprintf(txBuffer, sizeof(txBuffer), format, args);
+
+	/*  End variale argument passing */
+	va_end(args);
+
+	if( txBufferLen < 0 )
+	{
+		return;
+	}
+
+	if(txBufferLen >= SERIAL_TX_BUFF_SIZE)
+		txBufferLen = sizeof(txBuffer);
+
+	HAL_UART_Transmit(huart, txBuffer, txBufferLen, HAL_MAX_DELAY);
+}
+

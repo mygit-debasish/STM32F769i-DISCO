@@ -106,7 +106,6 @@ int main(void)
 	MX_CRC_Init();
 	MX_I2C4_Init();
 	MX_RTC_Init();
-	//MX_SDMMC2_MMC_Init();
 	MX_USART1_UART_Init();
 	MX_LWIP_Init();
 	/* USER CODE BEGIN 2 */
@@ -116,15 +115,21 @@ int main(void)
 	size_t wMsgLen = 0;
 
 	/* Test some LL code */
-	CHECK_ERROR_STATUS(returnError());
+	CHECK_ERROR_STATUS(returnSuccess());
 
 	writetoSerial(&huart1, "Searching network ...  \r\n");
 	getCpuId();
 
+	uint32_t wCount = 1500;
+
 	while (ip4_addr_isany_val(*netif_ip4_addr(&gnetif)))
 	{
 		MX_LWIP_Process();
+		wCount++;
+		HAL_Delay(20);
 	}
+
+	writeFormatData(&huart1, "Count value    : %d \r\n", wCount);
 
 	/* IP address information */
 	getIPAddress(&gnetif);
