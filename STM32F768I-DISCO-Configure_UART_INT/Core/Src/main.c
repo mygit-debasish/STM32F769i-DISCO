@@ -166,11 +166,11 @@ int main(void)
   /* Initialize USART1 for DMA transfer */
   Initialize_USART1_DMA_transfer();
 
-  /* Configuring DMA2 for Receive data */
-  Configure_DMA_Receive_USART1((uint8_t*)&USART1->RDR);
-
   /* Initialize Circular buffer for USART1 Receive DMA transfer */
   DmaCircularBuffer_ReadReceiveData_Init(&DmaUsartCircularBuffer);
+
+  /* Configuring DMA2 for Receive data */
+  Configure_DMA_Receive_USART1((uint8_t*)&USART1->RDR);
 
   /* USER CODE END 2 */
 
