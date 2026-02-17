@@ -4,14 +4,8 @@
  *  Created on: Dec 31, 2025
  *  Author: Debasish Das
  */
-#include "stm32f769xx.h"
+
 #include "custom.h"
-#include <string.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <stdbool.h>
-#include <inttypes.h>
-#include <stdarg.h>
 
 void _gettimeofday()
 {
@@ -181,7 +175,7 @@ const char* ErrorString(ERROR_t bError)
 	case FUN_ERROR_EMPTY: 	return "Empty Function";
 	}
 
-	return "SUCCESS";
+	return SUCCESS;
 }
 
 void writeFormatData(UART_HandleTypeDef *huart, const char *format, ...)
@@ -209,4 +203,119 @@ void writeFormatData(UART_HandleTypeDef *huart, const char *format, ...)
 
 	HAL_UART_Transmit(huart, txBuffer, txBufferLen, HAL_MAX_DELAY);
 }
+
+void UART1_TxRx_init()
+{
+	/* PA9 -> Transmit
+	 * Pa10 -> Received */
+
+	/******************  GPIO setup *****************************/
+
+	/* Enabling the clock for GPIOA*/
+	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+
+	/* Enabling the CLK for UART1 module */
+	RCC->APB2ENR |= RCC_APB2ENR_USART1EN;
+
+	/*Selecting alternate function Mode : AF7 */
+
+	/*  UART1 Transmiter MODER setting */
+	GPIOA->MODER &= ~(3U << (9 * 2));
+	GPIOA->MODER |= GPIO_MODER_MODER9_1;
+
+	/*  UART1 Receiver  MODER setting */
+	GPIOA->MODER &= ~(3U << (10 * 2));
+	GPIOA->MODER |= GPIO_MODER_MODER10_1;
+
+
+	/* UART1 AF7 setting for transmitter */
+	GPIOA->AFR[1] &= ~(0x0F << 4U);
+	GPIOA->AFR[1] |= GPIO_AF7_USART1 << 4U;
+
+	GPIOA->AFR[1] &= ~(0x0F << 8U);
+	GPIOA->AFR[1] |= GPIO_AF7_USART1 << 8U;
+
+	/* Pull up  register - Receive */
+	GPIOA->PUPDR &= ~(0x0F << 18);
+	GPIOA->PUPDR |= GPIO_PUPDR_PUPDR10_0;
+
+	/******************  USART setup *****************************/
+	/* Disable the UART1 and make sure transmission has been completed */
+	USART1->CR1 &= ~USART_CR1_UE;
+
+	/* Set Baud rate */
+	USART1->BRR = (USART1_CLK + (BAUD_RATE/2U)) / BAUD_RATE;
+
+	/* Enable transmit and receive */
+	USART1->CR1 |= USART_CR1_TE | USART_CR1_RE;
+
+	/* Start-Bit, Stop-Bit & Parity-Bit are default configuration of USART_CR1
+	 * Register */
+
+	/*Enable UART1 */
+	USART1->CR1 |= USART_CR1_UE;
+}
+
+/*Writing complete character to a USART */
+void UART1_Tx_Inter_write_char(char ch)
+{
+	/* Wait for Transfer Register is Empty */
+	while(!(USART1->ISR & USART_ISR_TXE));
+
+	/* Writing the data to Transmit Data Register */
+	USART1->TDR = (ch & 0xFF);
+}
+
+void UART1_Tx_Inter_write_str(const char *pData, size_t wDataLen)
+{
+	while (*pData)
+	{
+		while (!(USART1->ISR & USART_ISR_TXE));
+		USART1->TDR = (uint8_t) *pData++;
+	}
+
+	while (!(USART1->ISR & USART_ISR_TXE));
+	UART1_Tx_Inter_write_char('\r');
+
+	while (!(USART1->ISR & USART_ISR_TXE));
+	UART1_Tx_Inter_write_char('\n');
+
+	while (!(USART1->ISR & USART_ISR_TC));
+}
+
+
+ uint8_t UART1_Rx_Inter_read_char()
+{
+	uint8_t CharData;
+	/* Wait for Transfer Register is Empty */
+
+	while (!(USART1->ISR & USART_ISR_RXNE));
+	CharData = (uint8_t) USART1->RDR & 0xFF;
+
+	return CharData;
+}
+
+size_t UART1_Rx_Inter_read_string(uint8_t *pOutData, size_t wDataLen)
+{
+	size_t wLen = 0;
+	uint8_t ch;
+
+	if (!pOutData || wDataLen == 0)
+		return ERROR;
+
+	for (; wLen < wDataLen - 1; wLen++)
+	{
+		ch = UART1_Rx_Inter_read_char();
+
+		if (ch == '\r' || ch == '\n')
+			break;
+
+		pOutData[wLen] = ch;
+	}
+	pOutData[wLen] = '\0';
+
+	return wLen;
+}
+
+
 

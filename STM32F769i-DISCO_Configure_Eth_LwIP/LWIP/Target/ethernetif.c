@@ -692,7 +692,7 @@ void ethernet_link_check_state(struct netif *netif)
   int32_t PHYLinkState = 0;
   uint32_t linkchanged = 0U, speed = 0U, duplex = 0U;
 
-  PHYLinkState = LAN8742_GetLinkState(&LAN8742); /* ⬅️  Comes from the driver */
+  PHYLinkState = LAN8742_GetLinkState(&LAN8742); /* ⬅️ Comes from the driver ✅ */
 
   if(netif_is_link_up(netif) && (PHYLinkState <= LAN8742_STATUS_LINK_DOWN))
   {
