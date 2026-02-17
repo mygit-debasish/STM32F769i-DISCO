@@ -282,7 +282,6 @@ void Configure_DMA_Receive_USART1(uint8_t *pPeripheralSrc)
 	/* Set priority of DMA2 steam:2 CH:4 in NVIC */
 	NVIC_SetPriority(DMA2_Stream2_IRQn, 5);
 
-	/* Enable DMA2_stream2_IRQn */
 	NVIC_EnableIRQ(DMA2_Stream2_IRQn);
 }
 

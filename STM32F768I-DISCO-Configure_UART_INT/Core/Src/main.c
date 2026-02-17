@@ -179,6 +179,16 @@ int main(void)
 	while (1)
 	{
 		/* USER CODE END WHILE */;
+		if(flagLED_DMA_RX)
+		{
+			TurnGreenLED_ON();
+			HAL_Delay(2000);
+			TurnGreenLED_OFF();
+
+			flagLED_DMA_RX = 0;
+		}
+
+
 
 		/* USER CODE BEGIN 3 */
 	}

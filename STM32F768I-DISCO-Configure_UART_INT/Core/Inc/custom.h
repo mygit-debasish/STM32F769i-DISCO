@@ -148,6 +148,6 @@ size_t UART1_Rx_Inter_read_string(uint8_t *pOutData, size_t wDataLen);
 
 void GreenLED_init();
 void TurnGreenLED_ON();
-void TurnGreenLED_ON();
+void TurnGreenLED_OFF();
 
 /* Practice UART code ends */
