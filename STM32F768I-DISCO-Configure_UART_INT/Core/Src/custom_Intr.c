@@ -407,25 +407,28 @@ uint8_t currDmaBuffIndex = 0;
 uint8_t prevDmaBuffIndex = 0;
 uint8_t srcIndex = 0;
 
-//void DmaCircularBuffer_ReadReceiveData(DmaCirularBuff_t *pDmaUsart)
-//{
-//	size_t byteCount = 0;
-//
-//	currDmaBuffIndex = (DMA_BUF_SIZE - DMA2_Stream2->NDTR);
-//	byteCount = ( currDmaBuffIndex - prevDmaBuffIndex ) & (DMA_BUF_SIZE -1);
-//
-//	for(size_t i=0; i<byteCount; i++ )
-//	{
-//		srcIndex = (prevDmaBuffIndex + i) & (DMA_BUF_SIZE -1);
-//
-//		pDmaUsart->cirBufDMA[pDmaUsart->cir_buff_head] = aDmaRxBuf[srcIndex];
-//
-//		pDmaUsart->cir_buff_head = (pDmaUsart->cir_buff_head +1) & (CIRC_BUFFER_LEN - 1);
-//		//pDmaUsart->usart_dma_buff_head = (pDmaUsart->usart_dma_buff_head +1) & (DMA_BUF_SIZE - 1);
-//	}
-//
-//	prevDmaBuffIndex = currDmaBuffIndex;
-//}
+
+/** Below in clearer version
+void DmaCircularBuffer_ReadReceiveData(DmaCirularBuff_t *pDmaUsart)
+{
+	size_t byteCount = 0;
+
+	currDmaBuffIndex = (DMA_BUF_SIZE - DMA2_Stream2->NDTR);
+	byteCount = ( currDmaBuffIndex - prevDmaBuffIndex ) & (DMA_BUF_SIZE -1);
+
+	for(size_t i=0; i<byteCount; i++ )
+	{
+		srcIndex = (prevDmaBuffIndex + i) & (DMA_BUF_SIZE -1);
+
+		pDmaUsart->cirBufDMA[pDmaUsart->cir_buff_head] = aDmaRxBuf[srcIndex];
+
+		pDmaUsart->cir_buff_head = (pDmaUsart->cir_buff_head +1) & (CIRC_BUFFER_LEN - 1);
+		//pDmaUsart->usart_dma_buff_head = (pDmaUsart->usart_dma_buff_head +1) & (DMA_BUF_SIZE - 1);
+	}
+
+	prevDmaBuffIndex = currDmaBuffIndex;
+}
+**/
 
 void DmaCircularBuffer_ReadReceiveData(DmaCirularBuff_t *pDmaUsart)
 {
