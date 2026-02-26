@@ -44,7 +44,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-/* MODE Selection ✍ */
+/* MODE Selection Flag ✍ */
 #define DIRECT_MODE 0
 #define INTR_MODE 	0
 #define DMA_MODE	1
@@ -910,3 +910,4 @@ void assert_failed(uint8_t *file, uint32_t line)
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
+
