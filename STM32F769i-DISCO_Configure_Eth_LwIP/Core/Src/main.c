@@ -36,6 +36,16 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+/* USER CODE BEGIN Includes */
+/* UNICODE char : Ctrl + Shift + U
+ * 270D:	Writing hand ✍
+ * 2705:	White Heavy Check Mark ✅
+ * 274E:	Negative squared cross mark ❎
+ * 274C:	Cross mark ❌
+ * 2753:	Black question mark ornament ❓
+ * 2757:	Heavy exclamation mark symbol ❗
+ * */
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/

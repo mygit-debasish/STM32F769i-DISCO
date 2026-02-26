@@ -53,6 +53,8 @@ typedef enum
 #define ENB_DRDY 	0x80U
 #define ENB_INTR1 	0x08U
 
+#define SENSOR_DATA_LEN 64U
+
 /* System Clock Source */
 typedef enum
 {

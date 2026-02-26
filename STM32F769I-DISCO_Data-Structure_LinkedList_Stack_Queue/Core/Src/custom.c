@@ -324,6 +324,28 @@ void printLine()
 {
 
 	writetoSerial(&huart1,
-			"***************************************************\r\n");
+			"==============================================================\r\n");
+}
+
+
+float sumFunc(uint8_t count, ...)
+{
+	va_list args;
+	va_start(args, count);
+	float sum = 0.0;
+
+	while (count > 0)
+	{
+		sum += va_arg(args, double);
+		count--;
+	}
+	va_end(args);
+
+	return sum;
+}
+
+void printMsg(const char **cPtr)
+{
+	writetoSerial(&huart1, *cPtr);
 }
 

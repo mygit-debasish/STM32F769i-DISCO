@@ -104,6 +104,8 @@ void getCpuId();
 
 void LOG_Error_Status(int bError, const char *pFile, uint8_t bLineNum,
 		const char *pFunName, const char *pMsg);
+float sumFunc( uint8_t count, ...);
+void printMsg(const char **cPtr);
 
 typedef enum
 {

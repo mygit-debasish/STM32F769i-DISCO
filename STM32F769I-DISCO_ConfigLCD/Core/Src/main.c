@@ -70,17 +70,11 @@ ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT] __attribute__((section(".TxDecr
 #endif
 
 ETH_TxPacketConfig TxConfig;
-
 CRC_HandleTypeDef hcrc;
-
 DMA2D_HandleTypeDef hdma2d;
-
 DSI_HandleTypeDef hdsi;
-
 LTDC_HandleTypeDef hltdc;
-
 QSPI_HandleTypeDef hqspi;
-
 RTC_HandleTypeDef hrtc;
 
 SAI_HandleTypeDef hsai_BlockA1;
@@ -88,11 +82,8 @@ SAI_HandleTypeDef hsai_BlockB1;
 SAI_HandleTypeDef hsai_BlockA2;
 
 SPDIFRX_HandleTypeDef hspdif;
-
 UART_HandleTypeDef huart1;
-
 SDRAM_HandleTypeDef hsdram1;
-
 osThreadId defaultTaskHandle;
 /* USER CODE BEGIN PV */
 
@@ -166,17 +157,11 @@ int main(void)
 
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
-	MX_CRC_Init();
-	MX_DMA2D_Init();
-	MX_DSIHOST_DSI_Init();
 	MX_FMC_Init();
 	BSP_SDRAM_Init(); /* ✅ Important */
 
 	MX_LTDC_Init();
 	BSP_LCD_Init(); /* ✅ Important */
-
-	MX_QUADSPI_Init();
-	MX_RTC_Init();
 	MX_USART1_UART_Init();
 
 	/* USER CODE BEGIN 2 */

@@ -66,6 +66,8 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 
+const char *pMsg = "Hare Krishna Hare Krishna, Krishna Krishna Hare Hare \r\n";
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -145,6 +147,11 @@ int main(void)
   /* Print listed items */
   printNodesUptoPosition(&list, 5);
   printLine();
+  writeFormatData(&huart1, "Using variable argument list: %0.4f \r\n", sumFunc(3, 1.5, 2.3, 5.5 ));
+
+  printLine();
+  printMsg(&pMsg);
+
 
   /* USER CODE END 2 */
 
