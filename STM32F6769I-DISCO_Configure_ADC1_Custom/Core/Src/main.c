@@ -47,8 +47,10 @@
 /* MODE Selection Flag ✍ */
 #define DIRECT_MODE 0
 #define INTR_MODE 	0
-#define DMA_MODE	1
-#define HAL_MODE 0
+#define DMA_MODE	0
+#define HAL_MODE 	0
+#define EXT_TRIG	1	/* TIM1 Tigger */
+
 /* MODE Selction ENDS */
 
 
@@ -57,6 +59,7 @@ volatile uint16_t AdcCount = 0;
 uint16_t bufferADC[BUFF_LEN];
 uint16_t curValue;
 float voltageValue = 0.0;
+volatile uint32_t CNT1Value;
 
 
 #define SENSOR_DATA_LEN 32U
@@ -146,10 +149,20 @@ int main(void)
   /* Initialize custom ADC1 function */
   ADC1_Init();
 
+  /*Configure the TIM1 for external trigger */
+  TIM1_Configure(500);
 
 #if DIRECT_MODE
   writetoSerial(&huart1, "Configuring ADC1 in Direct mode  \r\n");
 #endif /*DIRECT_MODE*/
+
+#if EXT_TRIG
+  writetoSerial(&huart1, "Configuring ADC1 in EXT_TRIG mode  \r\n");
+#endif /*EXT_TRIG_MODE*/
+
+
+  /* Turning ON the ADC and Software Start the ADC */
+  ADC1_StartConversion();
 
 #if INTR_MODE
   writetoSerial(&huart1, "Configuring ADC1 in Interrupt mode  \r\n");
@@ -188,8 +201,19 @@ int main(void)
 	  			if(voltADC > 2.0)
 	  				ToggleGreenLED();
 
-	  HAL_Delay(250);
+		HAL_Delay(250);
 #endif /*DIRECT_MODE*/
+
+#if EXT_TRIG
+
+		AdcCount = ADC1->DR;
+		voltADC = ADC_CountToVolt(AdcCount);
+		writeFormatData(&huart1,
+				"TIM1 triggred: ADC count: %d Voltage: %0.2f \r", AdcCount,
+				voltADC);
+
+		CNT1Value = TIM1->CNT;
+#endif /*EXT_TRIG_MODE*/
 
 
 #if INTR_MODE

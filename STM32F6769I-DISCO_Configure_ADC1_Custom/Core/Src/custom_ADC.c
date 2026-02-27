@@ -7,6 +7,10 @@
 
 #include "custom_ADC.h"
 
+#define SW_TRIG		0	/* Software Tigger */
+#define EXT_TRIG	1	/* TIM1 Tigger */
+
+
 void ADC1_Init()
 {
 	/************************ Configuring GPIO *********************/
@@ -35,8 +39,23 @@ void ADC1_Init()
 	 * 108MHz/2 = 54MHz */
 	ADC->CCR &= ~ADC_CCR_ADCPRE_Msk;
 
+#if SW_TRIG
 	/* Selecting continuous mode */
 	ADC1->CR2 |= ADC_CR2_CONT;
+#endif	/*SW_TRIG*/
+
+#if EXT_TRIG
+	/* Selecting TIMER-1 trigger for ADC1
+	 * b1001: tim1_trgo  */
+	ADC1->CR2 |= ADC_CR2_EXTSEL_3 | ADC_CR2_EXTSEL_0;
+
+	/* Trigger  Rising edge seclection */
+	ADC1->CR2 |= ADC_CR2_EXTEN_0;
+#endif
+
+
+	/* Setting for External trigger TIM1 TIM1_TRG0 */
+
 
 	/* Enabnling DMA for ADC1 ✍ */
 	ADC1->CR2 |= ADC_CR2_DMA;
@@ -69,8 +88,44 @@ void ADC1_StartConversion()
 {
 	/* Turing ON ADC1 */
 	ADC1->CR2 |= ADC_CR2_ADON;
+
+#if SW_TRIG
 	ADC1->CR2 |= ADC_CR2_SWSTART;
+#endif /*SW_TRIG*/
 }
+
+
+void TIM1_Configure(uint16_t timeTrigger_ms)
+{
+	/* TIM1 is connected to APB2 bus having clock source
+	 * APB2 timer clock = 216 MHz */
+
+	uint16_t PrescaleValue = 21600 -1;
+	uint16_t AutoRR = 0;
+
+	AutoRR = (10000 * timeTrigger_ms / 1000) - 1;
+
+	/* CLK Enable for TIM1 */
+	RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
+
+	/* TIM1 Prescaler value*/
+	TIM1->PSC = PrescaleValue;
+
+	/* TIM1 Autorelaod value for 250 ms  trigger */
+	TIM1->ARR = AutoRR;
+
+	/* Update event for ADC1*/
+	/* Providining External trigger to ADC1 */
+	TIM1->CR2 &= ~TIM_CR2_MMS;
+	TIM1->CR2 |= TIM_CR2_MMS_1;
+
+    /* Force update event to load registers */
+    TIM1->EGR |= TIM_EGR_UG;
+
+	/* Enable TIM1 */
+	TIM1->CR1 |= TIM_CR1_CEN;
+}
+
 
 void ADC1_StopConversion()
 {

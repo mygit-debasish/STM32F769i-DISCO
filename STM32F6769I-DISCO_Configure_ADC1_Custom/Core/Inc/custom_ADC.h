@@ -17,6 +17,7 @@ void ADC1_Init();
 
 void ADC1_StartConversion();
 void ADC1_StopConversion();
+void TIM1_Configure(uint16_t timeTrigger_ms);
 
 void ADC1_Interrupt_Initialization();
 void ADC1_DMA_Initialization(uint16_t *pMemoryDst, uint16_t wDataLen);
