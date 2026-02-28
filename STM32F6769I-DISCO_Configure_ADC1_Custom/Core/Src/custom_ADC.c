@@ -55,9 +55,7 @@ void ADC1_Init()
 
 
 	/* Setting for External trigger TIM1 TIM1_TRG0 */
-
-
-	/* Enabnling DMA for ADC1 ✍ */
+	/* Enabling DMA for ADC1 ✍ */
 	ADC1->CR2 |= ADC_CR2_DMA;
 
 	/* Selecting continuous DMA request mode ✍ */

@@ -149,20 +149,24 @@ int main(void)
   /* Initialize custom ADC1 function */
   ADC1_Init();
 
-  /*Configure the TIM1 for external trigger */
-  TIM1_Configure(500);
-
 #if DIRECT_MODE
   writetoSerial(&huart1, "Configuring ADC1 in Direct mode  \r\n");
 #endif /*DIRECT_MODE*/
 
 #if EXT_TRIG
   writetoSerial(&huart1, "Configuring ADC1 in EXT_TRIG mode  \r\n");
+
+  /*Configure the TIM1 for external trigger */
+  TIM1_Configure(500);
+
+  /* Turning ON the ADC and no SWSTART trigger ❌  */
+  ADC1_StartConversion();
+
 #endif /*EXT_TRIG_MODE*/
 
 
   /* Turning ON the ADC and Software Start the ADC */
-  ADC1_StartConversion();
+  //ADC1_StartConversion();
 
 #if INTR_MODE
   writetoSerial(&huart1, "Configuring ADC1 in Interrupt mode  \r\n");
