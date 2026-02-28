@@ -11,6 +11,15 @@
 #define EXT_TRIG	1	/* TIM1 Tigger */
 
 
+/**
+ * @brief Initializes ADC1 peripheral
+ *
+ * Configures GPIO, ADC clock, resolution,
+ * sampling time, and DMA request.
+ *
+ * @note ADC clock must be < 36 MHz.
+ */
+
 void ADC1_Init()
 {
 	/************************ Configuring GPIO *********************/
@@ -79,7 +88,6 @@ void ADC1_Init()
 
 	/* CH6 is first channel in the Sequence */
 	ADC1->SQR3 |= ADC_SQR3_SQ1_1 | ADC_SQR3_SQ1_2;
-
 }
 
 void ADC1_StartConversion()
@@ -98,11 +106,23 @@ void TIM1_Configure(uint16_t timeTrigger_ms)
 	/* TIM1 is connected to APB2 bus having clock source
 	 * APB2 timer clock = 216 MHz */
 
-	uint16_t PrescaleValue = 21600 -1;
+	uint32_t PLCK2_Freq;
+	uint32_t TIM1Freq;
 	uint16_t AutoRR = 0;
+	uint16_t PrescaleValue = 21600 -1;
 
-	AutoRR = (10000 * timeTrigger_ms / 1000) - 1;
+	/* Deriving TIM1 input frequncy */
+	PLCK2_Freq = HAL_RCC_GetPCLK2Freq();
+	if ((RCC->CFGR & RCC_CFGR_PPRE2) != RCC_CFGR_PPRE2_DIV1)
+		TIM1Freq = 2 * PLCK2_Freq;
+	else
+		TIM1Freq = 1 * PLCK2_Freq;
 
+    /* Choose prescaler to get 10 kHz counter clock */
+    PrescaleValue = (TIM1Freq / 10000) - 1;
+
+    /* Calculate ARR */
+    AutoRR = ((10000 * timeTrigger_ms) / 1000) - 1;
 	/* CLK Enable for TIM1 */
 	RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
 
@@ -162,6 +182,14 @@ void ADC1_Interrupt_Initialization()
 	/* Enable  ADC1 Interrupt in NVIC*/
 	NVIC_EnableIRQ(ADC_IRQn);
 }
+
+
+/**
+ * @brief Initialize DMA for ADC1
+ *
+ * @param pMemoryDst Pointer to destination buffer
+ * @param wDataLen Number of samples
+ */
 
 void ADC1_DMA_Initialization(uint16_t *pMemoryDst, uint16_t wDataLen)
 {

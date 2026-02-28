@@ -165,9 +165,6 @@ int main(void)
 #endif /*EXT_TRIG_MODE*/
 
 
-  /* Turning ON the ADC and Software Start the ADC */
-  //ADC1_StartConversion();
-
 #if INTR_MODE
   writetoSerial(&huart1, "Configuring ADC1 in Interrupt mode  \r\n");
   /* initializing ADC1 in nterrupt Mode */
@@ -209,7 +206,6 @@ int main(void)
 #endif /*DIRECT_MODE*/
 
 #if EXT_TRIG
-
 		AdcCount = ADC1->DR;
 		voltADC = ADC_CountToVolt(AdcCount);
 		writeFormatData(&huart1,
@@ -217,7 +213,7 @@ int main(void)
 				voltADC);
 
 		CNT1Value = TIM1->CNT;
-#endif /*EXT_TRIG_MODE*/
+#endif /*EXT_TRIG*/
 
 
 #if INTR_MODE
