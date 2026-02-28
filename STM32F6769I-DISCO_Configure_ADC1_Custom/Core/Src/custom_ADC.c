@@ -109,7 +109,7 @@ void TIM1_Configure(uint16_t timeTrigger_ms)
 	uint32_t PLCK2_Freq;
 	uint32_t TIM1Freq;
 	uint16_t AutoRR = 0;
-	uint16_t PrescaleValue = 21600 -1;
+	uint16_t PrescaleValue;
 
 	/* Deriving TIM1 input frequncy */
 	PLCK2_Freq = HAL_RCC_GetPCLK2Freq();
