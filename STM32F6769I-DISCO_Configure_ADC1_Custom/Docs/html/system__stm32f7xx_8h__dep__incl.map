@@ -1,0 +1,9 @@
+<map id="Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h" name="Drivers/CMSIS/Device/ST/STM32F7xx/Include/system_stm32f7xx.h">
+<area shape="rect" id="node1" title="CMSIS Cortex&#45;M7 Device System Source File for STM32F7xx devices." alt="" coords="117,5,290,61"/>
+<area shape="rect" id="node2" href="$stm32f769xx_8h.html" title="CMSIS Cortex&#45;M7 Device Peripheral Access Layer Header File." alt="" coords="117,109,290,165"/>
+<area shape="rect" id="node3" href="$custom_8h.html" title=" " alt="" coords="191,213,330,240"/>
+<area shape="rect" id="node4" href="$custom__ADC_8h.html" title=" " alt="" coords="53,288,228,315"/>
+<area shape="rect" id="node6" href="$main_8c.html" title=": Main program body" alt="" coords="204,363,328,389"/>
+<area shape="rect" id="node7" href="$custom_8c.html" title=" " alt="" coords="303,288,442,315"/>
+<area shape="rect" id="node5" href="$custom__ADC_8c.html" title=" " alt="" coords="5,363,180,389"/>
+</map>

@@ -7,8 +7,8 @@
 
 #include "custom_ADC.h"
 
-#define SW_TRIG		0	/* Software Tigger */
-#define EXT_TRIG	1	/* TIM1 Tigger */
+#define SW_TRIG		1	/* Software Tigger */
+#define EXT_TRIG	0	/* TIM1 Tigger */
 
 
 /**
@@ -100,6 +100,17 @@ void ADC1_StartConversion()
 #endif /*SW_TRIG*/
 }
 
+
+
+/**
+ * @brief Generates specified trigger for ADC1
+ * TIM1_Configure(uint16_t timeTrigger_ms)
+ *
+ * Compute Prescale and Automatics Relaod value for given exeternal trigger
+ * of ADC1,
+ * .
+ * @note PCLK2 requency is ontained using HAL_RCC_GetPCLK2Freq()
+ */
 
 void TIM1_Configure(uint16_t timeTrigger_ms)
 {

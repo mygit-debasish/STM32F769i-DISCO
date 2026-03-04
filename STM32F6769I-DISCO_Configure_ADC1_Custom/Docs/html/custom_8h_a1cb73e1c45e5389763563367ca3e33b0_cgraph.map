@@ -1,0 +1,5 @@
+<map id="ToggleRedLED" name="ToggleRedLED">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,120,32"/>
+<area shape="rect" id="node2" href="$group__HAL__Exported__Functions__Group2.html#gab1dc1e6b438daacfe38a312a90221330" title="This function provides minimum delay (in milliseconds) based on variable incremented." alt="" coords="168,5,261,32"/>
+<area shape="rect" id="node3" href="$group__HAL__Exported__Functions__Group2.html#gac9b3a85a73735ac840d0dcb59bc0fdd6" title="Provides a tick value in millisecond." alt="" coords="309,5,415,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Error_Handler" name="Error_Handler">
+<area shape="rect" id="node1" title="This function is executed in case of error occurrence." alt="" coords="260,81,371,108"/>
+<area shape="rect" id="node2" href="$group__ADC__Exported__Functions__Group1.html#gaa30863492d5c3103e3e8ce8a63dadd07" title="ADC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="39,5,178,32"/>
+<area shape="rect" id="node3" href="$group__UART__Exported__Functions__Group1.html#ga0e553b32211877322f949b14801bbfa7" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="36,56,181,83"/>
+<area shape="rect" id="node4" href="$main_8c.html#a336c5acb34a801b2984e602b97ed7b73" title="Peripherals Common Clock Configuration." alt="" coords="5,107,212,133"/>
+<area shape="rect" id="node5" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="31,157,186,184"/>
+</map>

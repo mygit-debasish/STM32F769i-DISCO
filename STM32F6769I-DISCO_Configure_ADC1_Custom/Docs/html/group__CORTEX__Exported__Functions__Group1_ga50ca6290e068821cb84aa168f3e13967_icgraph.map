@@ -1,0 +1,4 @@
+<map id="HAL_NVIC_DisableIRQ" name="HAL_NVIC_DisableIRQ">
+<area shape="rect" id="node1" title=" " alt="" coords="209,5,376,32"/>
+<area shape="rect" id="node2" href="$group__ADC__Exported__Functions__Group1.html#ga39b0f8e80268ab3e660ead921ad4b22f" title="ADC MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="5,5,161,32"/>
+</map>

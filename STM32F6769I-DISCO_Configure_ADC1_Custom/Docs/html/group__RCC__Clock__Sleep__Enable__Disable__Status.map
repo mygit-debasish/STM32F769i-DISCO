@@ -1,0 +1,4 @@
+<map id="AHB/APB Peripheral Clock Sleep Enable Disable Status" name="AHB/APB Peripheral Clock Sleep Enable Disable Status">
+<area shape="rect" id="node1" href="$group__RCCEx__Exported__Macros.html" title=" " alt="" coords="5,20,184,45"/>
+<area shape="rect" id="node2" title="Get the enable or disable status of the AHB/APB peripheral clock during Low Power (Sleep) mode." alt="" coords="232,5,383,60"/>
+</map>

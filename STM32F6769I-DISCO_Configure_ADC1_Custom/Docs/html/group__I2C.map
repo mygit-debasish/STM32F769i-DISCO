@@ -1,0 +1,11 @@
+<map id="I2C" name="I2C">
+<area shape="rect" id="node1" href="$group__I2C__Private__Functions.html" title=" " alt="" coords="332,5,491,31"/>
+<area shape="rect" id="node2" href="$group__I2C__Private__Macro.html" title=" " alt="" coords="339,55,483,80"/>
+<area shape="rect" id="node3" href="$group__I2C__Exported__Constants.html" title=" " alt="" coords="324,104,499,129"/>
+<area shape="rect" id="node4" href="$group__I2C__Private__Constants.html" title=" " alt="" coords="330,153,493,179"/>
+<area shape="rect" id="node5" title="I2C HAL module driver." alt="" coords="232,153,275,179"/>
+<area shape="rect" id="node6" href="$group__I2C__Exported__Types.html" title=" " alt="" coords="338,203,485,228"/>
+<area shape="rect" id="node8" href="$group__I2C__Exported__Functions.html" title=" " alt="" coords="323,252,500,277"/>
+<area shape="rect" id="node9" href="$group__I2C__Exported__Macros.html" title=" " alt="" coords="333,301,489,327"/>
+<area shape="rect" id="node7" href="$group__STM32F7xx__HAL__Driver.html" title=" " alt="" coords="5,153,184,179"/>
+</map>

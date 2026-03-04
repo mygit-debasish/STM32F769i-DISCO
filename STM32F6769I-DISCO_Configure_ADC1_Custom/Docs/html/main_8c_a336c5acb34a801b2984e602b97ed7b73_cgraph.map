@@ -1,0 +1,6 @@
+<map id="PeriphCommonClock_Config" name="PeriphCommonClock_Config">
+<area shape="rect" id="node1" title="Peripherals Common Clock Configuration." alt="" coords="5,31,212,57"/>
+<area shape="rect" id="node2" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="310,5,421,32"/>
+<area shape="rect" id="node4" href="$group__RCCEx__Exported__Functions__Group1.html#ga0c0f61a1e2f47cc81bc43d83ba3e0d95" title=" " alt="" coords="260,56,471,83"/>
+<area shape="rect" id="node3" href="$group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6" title="Disable IRQ Interrupts." alt="" coords="519,5,625,32"/>
+</map>

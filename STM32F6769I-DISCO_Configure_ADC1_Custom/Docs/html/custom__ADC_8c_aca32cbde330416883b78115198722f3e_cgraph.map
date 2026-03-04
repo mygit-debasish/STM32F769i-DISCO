@@ -1,0 +1,4 @@
+<map id="TIM1_Configure" name="TIM1_Configure">
+<area shape="rect" id="node1" title="Generates specified trigger for ADC1 TIM1_Configure(uint16_t timeTrigger_ms)" alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$group__RCC__Exported__Functions__Group2.html#gabbd5f8933a5ee05e4b3384e33026aca1" title=" " alt="" coords="176,5,357,32"/>
+</map>

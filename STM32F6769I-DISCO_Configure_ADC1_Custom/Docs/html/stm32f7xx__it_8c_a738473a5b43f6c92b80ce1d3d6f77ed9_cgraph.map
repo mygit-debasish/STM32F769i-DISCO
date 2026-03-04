@@ -1,0 +1,4 @@
+<map id="EXTI15_10_IRQHandler" name="EXTI15_10_IRQHandler">
+<area shape="rect" id="node1" title="This function handles ADC1, ADC2 and ADC3 global interrupts." alt="" coords="5,5,176,32"/>
+<area shape="rect" id="node2" href="$group__GPIO__Exported__Functions__Group2.html#gaa5de1ec4ebdd47e3e2b786224adaa9d0" title=" " alt="" coords="224,5,428,32"/>
+</map>

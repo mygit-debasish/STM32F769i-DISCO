@@ -1,0 +1,4 @@
+<map id="APB1 Peripheral Clock Enable Disable" name="APB1 Peripheral Clock Enable Disable">
+<area shape="rect" id="node1" href="$group__RCC__Exported__Macros.html" title=" " alt="" coords="5,13,168,38"/>
+<area shape="rect" id="node2" title="Enable or disable the Low Speed APB (APB1) peripheral clock." alt="" coords="216,5,383,45"/>
+</map>

@@ -49,7 +49,9 @@
 #define INTR_MODE 	0
 #define DMA_MODE	0
 #define HAL_MODE 	0
-#define EXT_TRIG	1	/* TIM1 Tigger */
+#define EXT_TRIG	0	/* TIM1 Tigger */
+
+#define CLK_CONFIG 1
 
 /* MODE Selction ENDS */
 
@@ -60,10 +62,11 @@ uint16_t bufferADC[BUFF_LEN];
 uint16_t curValue;
 float voltageValue = 0.0;
 volatile uint32_t CNT1Value;
-
-
 #define SENSOR_DATA_LEN 32U
 uint16_t sensorData[SENSOR_DATA_LEN];
+
+RCC_OscInitTypeDef OscStruct;
+
 /* Global debug variables ends */
 
 /* External variables */
@@ -184,6 +187,15 @@ int main(void)
   /* Turning ON the ADC and trigger Software Start of the ADC */
   ADC1_StartConversion();
 #endif
+
+
+#if CLK_CONFIG
+
+  /* Get Oscillator configuration */
+  HAL_RCC_GetOscConfig(&OscStruct);
+
+#endif /*CLK_CONFIG*/
+
 
   while (1)
   {

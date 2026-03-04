@@ -1,0 +1,9 @@
+<map id="Drivers/CMSIS/Include/core_cm7.h" name="Drivers/CMSIS/Include/core_cm7.h">
+<area shape="rect" id="node1" title="CMSIS Cortex&#45;M7 Core Peripheral Access Layer Header File." alt="" coords="121,5,286,47"/>
+<area shape="rect" id="node2" href="$stm32f769xx_8h.html" title="CMSIS Cortex&#45;M7 Device Peripheral Access Layer Header File." alt="" coords="117,95,290,151"/>
+<area shape="rect" id="node3" href="$custom_8h.html" title=" " alt="" coords="191,199,330,225"/>
+<area shape="rect" id="node4" href="$custom__ADC_8h.html" title=" " alt="" coords="53,273,228,300"/>
+<area shape="rect" id="node6" href="$main_8c.html" title=": Main program body" alt="" coords="204,348,328,375"/>
+<area shape="rect" id="node7" href="$custom_8c.html" title=" " alt="" coords="303,273,442,300"/>
+<area shape="rect" id="node5" href="$custom__ADC_8c.html" title=" " alt="" coords="5,348,180,375"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="HAL_ADC_MspInit" name="HAL_ADC_MspInit">
+<area shape="rect" id="node1" title="ADC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,107,144,133"/>
+<area shape="rect" id="node2" href="$main_8h.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="218,5,329,32"/>
+<area shape="rect" id="node4" href="$group__DMA__Exported__Functions__Group1.html#ga0fbcb690074233a03f2fa366dc22ff01" title=" " alt="" coords="216,56,331,83"/>
+<area shape="rect" id="node5" href="$group__GPIO__Exported__Functions__Group1.html#ga41bda93b6dd639e4905fdb1454eff98e" title=" " alt="" coords="216,107,331,133"/>
+<area shape="rect" id="node6" href="$group__CORTEX__Exported__Functions__Group1.html#gaaad4492c1b25e006d69948a15790352a" title=" " alt="" coords="193,157,354,184"/>
+<area shape="rect" id="node7" href="$group__CORTEX__Exported__Functions__Group1.html#ga8581a82025a4780efd00876a66e3e91b" title=" " alt="" coords="192,208,355,235"/>
+<area shape="rect" id="node3" href="$group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6" title="Disable IRQ Interrupts." alt="" coords="403,5,509,32"/>
+</map>

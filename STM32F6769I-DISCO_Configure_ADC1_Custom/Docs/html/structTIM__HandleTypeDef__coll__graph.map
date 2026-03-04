@@ -1,0 +1,8 @@
+<map id="TIM_HandleTypeDef" name="TIM_HandleTypeDef">
+<area shape="rect" id="node1" title="TIM Time Base Handle Structure definition." alt="" coords="263,184,415,211"/>
+<area shape="rect" id="node2" href="$struct____DMA__HandleTypeDef.html" title="DMA handle Structure definition." alt="" coords="89,95,262,121"/>
+<area shape="rect" id="node3" href="$structDMA__Stream__TypeDef.html" title="DMA Controller." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node4" href="$structDMA__InitTypeDef.html" title="DMA Configuration Structure definition." alt="" coords="196,5,331,32"/>
+<area shape="rect" id="node5" href="$structTIM__TypeDef.html" title="TIM." alt="" coords="286,95,393,121"/>
+<area shape="rect" id="node6" href="$structTIM__Base__InitTypeDef.html" title="TIM Time base Configuration Structure definition." alt="" coords="417,95,584,121"/>
+</map>

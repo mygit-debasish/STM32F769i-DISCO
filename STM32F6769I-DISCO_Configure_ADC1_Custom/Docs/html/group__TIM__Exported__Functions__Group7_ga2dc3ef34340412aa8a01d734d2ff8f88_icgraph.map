@@ -1,0 +1,4 @@
+<map id="HAL_TIM_IRQHandler" name="HAL_TIM_IRQHandler">
+<area shape="rect" id="node1" title=" " alt="" coords="224,5,384,32"/>
+<area shape="rect" id="node2" href="$stm32f7xx__it_8h.html#a0839a45f331c4c067939b9c4533bbf4d" title="This function handles TIM6 global interrupt, DAC1 and DAC2 underrun error interrupts." alt="" coords="5,5,176,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="RCCEx Peripheral Clock Sleep Enable Disable" name="RCCEx Peripheral Clock Sleep Enable Disable">
+<area shape="rect" id="node1" href="$group__RCCEx__Exported__Macros.html" title=" " alt="" coords="5,13,184,38"/>
+<area shape="rect" id="node2" title="Enables or disables the AHB/APB peripheral clock during Low Power (Sleep) mode." alt="" coords="232,5,407,45"/>
+</map>

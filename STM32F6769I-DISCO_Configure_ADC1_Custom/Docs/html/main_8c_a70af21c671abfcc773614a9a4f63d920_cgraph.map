@@ -1,0 +1,9 @@
+<map id="SystemClock_Config" name="SystemClock_Config">
+<area shape="rect" id="node1" title="System Clock Configuration." alt="" coords="5,107,160,133"/>
+<area shape="rect" id="node2" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="262,5,373,32"/>
+<area shape="rect" id="node4" href="$group__PWR__Exported__Functions__Group1.html#ga3d07cef39bf294db4aed7e06e5dbf9af" title=" " alt="" coords="209,56,425,83"/>
+<area shape="rect" id="node5" href="$group__PWREx__Exported__Functions__Group1.html#gaaf092495bffd53ad2fe6a91f90f87032" title=" " alt="" coords="208,107,427,133"/>
+<area shape="rect" id="node6" href="$group__RCC__Exported__Functions__Group1.html#gadb770505476995fc13c2ca7290d9c484" title=" " alt="" coords="234,157,401,184"/>
+<area shape="rect" id="node7" href="$group__RCC__Exported__Functions__Group1.html#gaaf070da42c717e9d2d79e858b647b782" title=" " alt="" coords="240,208,395,235"/>
+<area shape="rect" id="node3" href="$group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6" title="Disable IRQ Interrupts." alt="" coords="475,5,581,32"/>
+</map>

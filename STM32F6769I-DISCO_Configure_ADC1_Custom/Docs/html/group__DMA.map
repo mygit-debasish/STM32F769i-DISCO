@@ -1,0 +1,10 @@
+<map id="DMA" name="DMA">
+<area shape="rect" id="node1" href="$group__DMA__Private__Constants.html" title="DMA private defines and constants." alt="" coords="339,5,511,31"/>
+<area shape="rect" id="node2" href="$group__DMA__Exported__Constants.html" title="DMA Exported constants." alt="" coords="333,55,517,80"/>
+<area shape="rect" id="node3" href="$group__STM32F7xx__HAL__Driver.html" title=" " alt="" coords="5,129,184,155"/>
+<area shape="rect" id="node6" title="DMA HAL module driver." alt="" coords="232,129,285,155"/>
+<area shape="rect" id="node4" href="$group__DMA__Private__Macros.html" title="DMA private macros." alt="" coords="348,104,503,129"/>
+<area shape="rect" id="node5" href="$group__DMA__Exported__Types.html" title="DMA Exported Types." alt="" coords="347,153,503,179"/>
+<area shape="rect" id="node7" href="$group__DMA__Exported__Functions.html" title="DMA Exported functions." alt="" coords="335,203,516,228"/>
+<area shape="rect" id="node8" href="$group__DMA__Private__Functions.html" title="DMA private functions." alt="" coords="341,252,510,277"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="HAL_RCC_GetPCLK2Freq" name="HAL_RCC_GetPCLK2Freq">
+<area shape="rect" id="node1" title=" " alt="" coords="176,5,357,32"/>
+<area shape="rect" id="node2" href="$custom__ADC_8h.html#aca32cbde330416883b78115198722f3e" title="Generates specified trigger for ADC1 TIM1_Configure(uint16_t timeTrigger_ms)" alt="" coords="5,5,128,32"/>
+</map>

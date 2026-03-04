@@ -1,0 +1,9 @@
+<map id="RTCEx Exported Macros" name="RTCEx Exported Macros">
+<area shape="rect" id="node1" href="$group__RTCEx.html" title="RTC Extended HAL module driver." alt="" coords="5,104,68,129"/>
+<area shape="rect" id="node7" title=" " alt="" coords="116,104,291,129"/>
+<area shape="rect" id="node2" href="$group__RTCEx__Calibration.html" title=" " alt="" coords="391,5,529,31"/>
+<area shape="rect" id="node3" href="$group__RTCEx__Tamper__Timestamp.html" title=" " alt="" coords="339,55,581,80"/>
+<area shape="rect" id="node4" href="$group__RTCEx__Tamper.html" title=" " alt="" coords="403,104,517,129"/>
+<area shape="rect" id="node5" href="$group__RTCEx__Timestamp.html" title=" " alt="" coords="390,153,530,179"/>
+<area shape="rect" id="node6" href="$group__RTCEx__WakeUp__Timer.html" title=" " alt="" coords="379,203,541,228"/>
+</map>
