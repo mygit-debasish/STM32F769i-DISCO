@@ -146,6 +146,7 @@ int main(void)
   uint8_t curYear;
   uint8_t curMonth;
   uint8_t curDay;
+  uint8_t alarmCount = 0;
 
   /* Initializing LED for capture RTC Alarm interrupt */
   GreenLED_init();
@@ -164,14 +165,16 @@ int main(void)
 		RTC_GetTime(&curHour, &curMin, &curSec);
 		RTC_GetDate(&curYear, &curMonth, &curDay);
 
-		writeFormatData(&huart1, "Current Time: %02u:%02u:%02u\ \r", curHour,
+		writeFormatData(&huart1, "Current Time: %02u:%02u:%02u \r", curHour,
 				curMin, curSec);
 #endif
 		/* RTC Alarm set at Second = 15 */
 		if (RTC_INTR_ON)
 		{
 			ToggleGreenLED();
+			writeFormatData(&huart1, "Alarm Count: %02u \r\n", alarmCount);
 			RTC_INTR_ON = 0;
+			alarmCount++;
 		}
 
 		HAL_Delay(250);
