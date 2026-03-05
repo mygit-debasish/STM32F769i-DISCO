@@ -45,13 +45,19 @@ uint8_t RTC_INTR_ON = 0;
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+
 CRC_HandleTypeDef hcrc;
+
 I2C_HandleTypeDef hi2c1;
-IWDG_HandleTypeDef hiwdg;
+
 LTDC_HandleTypeDef hltdc;
+
 RNG_HandleTypeDef hrng;
+
 RTC_HandleTypeDef hrtc;
+
 TIM_HandleTypeDef htim1;
+
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
@@ -66,7 +72,6 @@ static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_CRC_Init(void);
 static void MX_I2C1_Init(void);
-static void MX_IWDG_Init(void);
 static void MX_LTDC_Init(void);
 static void MX_RTC_Init(void);
 static void MX_TIM1_Init(void);
@@ -120,7 +125,7 @@ int main(void)
   MX_CRC_Init();
   MX_I2C1_Init();
   MX_LTDC_Init();
-  //MX_RTC_Init();
+  MX_RTC_Init();
   MX_TIM1_Init();
   MX_USART1_UART_Init();
   MX_RNG_Init();
@@ -179,9 +184,9 @@ int main(void)
 
 		HAL_Delay(250);
 
-		/* USER CODE END WHILE */
+    /* USER CODE END WHILE */
 
-		/* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN 3 */
 	}
   /* USER CODE END 3 */
 }
@@ -401,35 +406,6 @@ static void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
-
-}
-
-/**
-  * @brief IWDG Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_IWDG_Init(void)
-{
-
-  /* USER CODE BEGIN IWDG_Init 0 */
-
-  /* USER CODE END IWDG_Init 0 */
-
-  /* USER CODE BEGIN IWDG_Init 1 */
-
-  /* USER CODE END IWDG_Init 1 */
-  hiwdg.Instance = IWDG;
-  hiwdg.Init.Prescaler = IWDG_PRESCALER_4;
-  hiwdg.Init.Window = 4095;
-  hiwdg.Init.Reload = 4095;
-  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN IWDG_Init 2 */
-
-  /* USER CODE END IWDG_Init 2 */
 
 }
 
