@@ -1,0 +1,10 @@
+<map id="IWDG" name="IWDG">
+<area shape="rect" id="node1" href="$group__IWDG__Exported__Functions.html" title=" " alt="" coords="341,5,527,31"/>
+<area shape="rect" id="node2" href="$group__IWDG__Exported__Macros.html" title=" " alt="" coords="348,55,520,80"/>
+<area shape="rect" id="node3" href="$group__IWDG__Exported__Types.html" title=" " alt="" coords="353,104,515,129"/>
+<area shape="rect" id="node4" href="$group__IWDG__Private__Macros.html" title=" " alt="" coords="354,153,514,179"/>
+<area shape="rect" id="node5" href="$group__STM32F7xx__HAL__Driver.html" title=" " alt="" coords="5,129,184,155"/>
+<area shape="rect" id="node6" title=" " alt="" coords="232,129,291,155"/>
+<area shape="rect" id="node7" href="$group__IWDG__Exported__Constants.html" title=" " alt="" coords="339,203,529,228"/>
+<area shape="rect" id="node8" href="$group__IWDG__Private__Constants.html" title=" " alt="" coords="345,252,523,277"/>
+</map>

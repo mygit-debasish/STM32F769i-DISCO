@@ -1,0 +1,8 @@
+<map id="CRCEx" name="CRCEx">
+<area shape="rect" id="node1" href="$group__CRCEx__Private__Macros.html" title=" " alt="" coords="363,5,527,45"/>
+<area shape="rect" id="node2" href="$group__STM32F7xx__HAL__Driver.html" title=" " alt="" coords="5,99,184,125"/>
+<area shape="rect" id="node5" title="CRC Extended HAL module driver." alt="" coords="232,99,297,125"/>
+<area shape="rect" id="node3" href="$group__CRCEx__Exported__Functions.html" title=" " alt="" coords="345,70,544,95"/>
+<area shape="rect" id="node4" href="$group__CRCEx__Exported__Macros.html" title=" " alt="" coords="357,120,533,160"/>
+<area shape="rect" id="node6" href="$group__CRCEx__Exported__Constants.html" title=" " alt="" coords="357,184,533,224"/>
+</map>

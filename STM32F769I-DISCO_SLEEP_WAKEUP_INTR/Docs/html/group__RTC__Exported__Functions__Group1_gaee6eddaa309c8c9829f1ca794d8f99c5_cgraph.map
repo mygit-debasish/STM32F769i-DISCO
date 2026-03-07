@@ -1,0 +1,7 @@
+<map id="HAL_RTC_MspInit" name="HAL_RTC_MspInit">
+<area shape="rect" id="node1" title="RTC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,56,140,83"/>
+<area shape="rect" id="node2" href="$main_8h.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="238,5,349,32"/>
+<area shape="rect" id="node4" href="$group__GPIO__Exported__Functions__Group1.html#ga41bda93b6dd639e4905fdb1454eff98e" title=" " alt="" coords="236,56,351,83"/>
+<area shape="rect" id="node5" href="$group__RCCEx__Exported__Functions__Group1.html#ga0c0f61a1e2f47cc81bc43d83ba3e0d95" title=" " alt="" coords="188,107,399,133"/>
+<area shape="rect" id="node3" href="$group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6" title="Disable IRQ Interrupts." alt="" coords="447,5,553,32"/>
+</map>

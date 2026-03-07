@@ -1,0 +1,8 @@
+<map id="UARTEx" name="UARTEx">
+<area shape="rect" id="node1" href="$group__UARTEx__Exported__Constants.html" title=" " alt="" coords="355,5,559,31"/>
+<area shape="rect" id="node2" title="UART Extended HAL module driver." alt="" coords="232,80,305,105"/>
+<area shape="rect" id="node3" href="$group__UARTEx__Exported__Types.html" title=" " alt="" coords="369,55,545,80"/>
+<area shape="rect" id="node4" href="$group__UARTEx__Private__Macros.html" title=" " alt="" coords="369,104,544,129"/>
+<area shape="rect" id="node6" href="$group__UARTEx__Exported__Functions.html" title=" " alt="" coords="353,153,560,179"/>
+<area shape="rect" id="node5" href="$group__STM32F7xx__HAL__Driver.html" title=" " alt="" coords="5,80,184,105"/>
+</map>

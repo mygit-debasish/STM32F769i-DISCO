@@ -1,0 +1,5 @@
+<map id="NAND_HandleTypeDef" name="NAND_HandleTypeDef">
+<area shape="rect" id="node1" title="NAND handle Structure definition." alt="" coords="133,95,300,121"/>
+<area shape="rect" id="node2" href="$structNAND__DeviceConfigTypeDef.html" title="NAND Memory info Structure definition." alt="" coords="5,5,212,32"/>
+<area shape="rect" id="node3" href="$structFMC__NAND__InitTypeDef.html" title="FMC NAND Configuration Structure definition." alt="" coords="237,5,415,32"/>
+</map>

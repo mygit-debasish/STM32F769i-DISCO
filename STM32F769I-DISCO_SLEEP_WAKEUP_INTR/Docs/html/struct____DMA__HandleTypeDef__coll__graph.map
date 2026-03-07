@@ -1,0 +1,5 @@
+<map id="__DMA_HandleTypeDef" name="__DMA_HandleTypeDef">
+<area shape="rect" id="node1" title="DMA handle Structure definition." alt="" coords="89,95,262,121"/>
+<area shape="rect" id="node2" href="$structDMA__Stream__TypeDef.html" title="DMA Controller." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node3" href="$structDMA__InitTypeDef.html" title="DMA Configuration Structure definition." alt="" coords="196,5,331,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="HAL_TIM_PeriodElapsedCallback" name="HAL_TIM_PeriodElapsedCallback">
+<area shape="rect" id="node1" title="Period elapsed callback in non blocking mode." alt="" coords="5,5,240,32"/>
+<area shape="rect" id="node2" href="$group__HAL__Exported__Functions__Group2.html#gaba5b726bfedd013bf7bb5a51d5c4f188" title="This function is called to increment a global variable &quot;uwTick&quot; used as application time base." alt="" coords="288,5,389,32"/>
+</map>

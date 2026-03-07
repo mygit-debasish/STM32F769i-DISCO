@@ -1,0 +1,30 @@
+<map id="SAI Exported Constants" name="SAI Exported Constants">
+<area shape="rect" id="node1" href="$group__SAI__Audio__Frequency.html" title=" " alt="" coords="359,5,515,31"/>
+<area shape="rect" id="node2" href="$group__SAI__Block__Interrupts__Definition.html" title=" " alt="" coords="361,55,512,95"/>
+<area shape="rect" id="node3" href="$group__SAI.html" title="SAI HAL module driver." alt="" coords="5,655,49,680"/>
+<area shape="rect" id="node6" title=" " alt="" coords="97,655,272,680"/>
+<area shape="rect" id="node4" href="$group__SAI__TRIState__Management.html" title=" " alt="" coords="340,120,533,145"/>
+<area shape="rect" id="node5" href="$group__SAI__Protocol__DataSize.html" title=" " alt="" coords="355,169,519,195"/>
+<area shape="rect" id="node7" href="$group__SAI__Error__Code.html" title=" " alt="" coords="379,219,495,244"/>
+<area shape="rect" id="node8" href="$group__SAI__Block__Slot__Active.html" title=" " alt="" coords="357,268,516,293"/>
+<area shape="rect" id="node9" href="$group__SAI__Block__Synchronization.html" title=" " alt="" coords="341,317,533,343"/>
+<area shape="rect" id="node10" href="$group__SAI__Block__Flags__Definition.html" title=" " alt="" coords="341,367,532,392"/>
+<area shape="rect" id="node11" href="$group__SAI__Block__Fifo__Status__Level.html" title=" " alt="" coords="358,417,515,457"/>
+<area shape="rect" id="node12" href="$group__SAI__Block__Slot__Size.html" title=" " alt="" coords="365,481,509,507"/>
+<area shape="rect" id="node13" href="$group__SAI__Block__Output__Drive.html" title=" " alt="" coords="351,531,522,556"/>
+<area shape="rect" id="node14" href="$group__SAI__Block__FS__Definition.html" title=" " alt="" coords="351,580,522,605"/>
+<area shape="rect" id="node15" href="$group__SAI__Block__Protocol.html" title=" " alt="" coords="366,629,507,655"/>
+<area shape="rect" id="node16" href="$group__SAI__Block__FS__Polarity.html" title=" " alt="" coords="358,679,515,704"/>
+<area shape="rect" id="node17" href="$group__SAI__Mono__Stereo__Mode.html" title=" " alt="" coords="351,728,522,753"/>
+<area shape="rect" id="node18" href="$group__SAI__Block__Mute__Value.html" title=" " alt="" coords="356,777,517,803"/>
+<area shape="rect" id="node19" href="$group__SAI__Protocol.html" title=" " alt="" coords="351,827,522,852"/>
+<area shape="rect" id="node20" href="$group__SAI__Block__NoDivider.html" title=" " alt="" coords="360,876,513,901"/>
+<area shape="rect" id="node21" href="$group__SAI__Block__MSB__LSB__transmission.html" title=" " alt="" coords="320,925,553,951"/>
+<area shape="rect" id="node22" href="$group__SAI__Block__Clock__Strobing.html" title=" " alt="" coords="345,975,528,1000"/>
+<area shape="rect" id="node23" href="$group__SAI__Block__FS__Offset.html" title=" " alt="" coords="363,1024,510,1049"/>
+<area shape="rect" id="node24" href="$group__SAI__Block__Companding__Mode.html" title=" " alt="" coords="331,1073,542,1099"/>
+<area shape="rect" id="node25" href="$group__SAI__Block__SyncExt.html" title=" " alt="" coords="332,1123,541,1148"/>
+<area shape="rect" id="node26" href="$group__SAI__Block__Fifo__Threshold.html" title=" " alt="" coords="347,1172,527,1197"/>
+<area shape="rect" id="node27" href="$group__SAI__Block__Data__Size.html" title=" " alt="" coords="361,1221,512,1247"/>
+<area shape="rect" id="node28" href="$group__SAI__Block__Mode.html" title=" " alt="" coords="375,1271,499,1296"/>
+</map>

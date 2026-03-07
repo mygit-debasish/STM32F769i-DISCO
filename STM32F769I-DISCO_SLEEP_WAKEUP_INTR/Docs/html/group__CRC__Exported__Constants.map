@@ -1,0 +1,11 @@
+<map id="CRC Exported Constants" name="CRC Exported Constants">
+<area shape="rect" id="node1" title=" " alt="" coords="103,213,283,238"/>
+<area shape="rect" id="node2" href="$group__CRC__Polynomial__Sizes.html" title=" " alt="" coords="333,5,515,45"/>
+<area shape="rect" id="node3" href="$group__CRC__Polynomial__Size__Definitions.html" title=" " alt="" coords="332,69,516,109"/>
+<area shape="rect" id="node4" href="$group__CRC__Default__Polynomial.html" title=" " alt="" coords="337,134,511,189"/>
+<area shape="rect" id="node6" href="$group__CRC__Input__Buffer__Format.html" title=" " alt="" coords="350,213,498,238"/>
+<area shape="rect" id="node7" href="$group__CRC__Default__Polynomial__Value.html" title=" " alt="" coords="337,263,511,303"/>
+<area shape="rect" id="node8" href="$group__CRC__Default__InitValue.html" title=" " alt="" coords="331,327,517,367"/>
+<area shape="rect" id="node9" href="$group__CRC__Default__InitValue__Use.html" title=" " alt="" coords="343,391,505,446"/>
+<area shape="rect" id="node5" href="$group__CRC.html" title="CRC HAL module driver." alt="" coords="5,213,55,238"/>
+</map>

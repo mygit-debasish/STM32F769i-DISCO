@@ -1,0 +1,9 @@
+<map id="HAL_InitTick" name="HAL_InitTick">
+<area shape="rect" id="node1" title="This function configures the TIM6 as a time base source. The time source is configured to have 1ms ti..." alt="" coords="5,132,108,159"/>
+<area shape="rect" id="node2" href="$group__CORTEX__Exported__Functions__Group1.html#gaaad4492c1b25e006d69948a15790352a" title=" " alt="" coords="170,5,331,32"/>
+<area shape="rect" id="node3" href="$group__CORTEX__Exported__Functions__Group1.html#ga8581a82025a4780efd00876a66e3e91b" title=" " alt="" coords="169,56,332,83"/>
+<area shape="rect" id="node4" href="$group__RCC__Exported__Functions__Group2.html#gabc95375dfca279d88b9ded9d063d2323" title=" " alt="" coords="156,107,345,133"/>
+<area shape="rect" id="node5" href="$group__RCC__Exported__Functions__Group2.html#gab3042d8ac5703ac696cabf0ee461c599" title=" " alt="" coords="160,157,341,184"/>
+<area shape="rect" id="node6" href="$group__TIM__Exported__Functions__Group1.html#ga1b288eb68eb52c97b8d187cdd6e9088f" title=" " alt="" coords="177,208,324,235"/>
+<area shape="rect" id="node7" href="$group__TIM__Exported__Functions__Group1.html#gae517d80e2ac713069767df8e8915971e" title=" " alt="" coords="163,259,338,285"/>
+</map>

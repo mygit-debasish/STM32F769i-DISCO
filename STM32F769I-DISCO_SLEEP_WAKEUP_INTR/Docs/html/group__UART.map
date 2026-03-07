@@ -1,0 +1,10 @@
+<map id="UART" name="UART">
+<area shape="rect" id="node1" href="$group__UART__Private__Macros.html" title=" " alt="" coords="352,5,511,31"/>
+<area shape="rect" id="node2" href="$group__UART__Exported__Macros.html" title=" " alt="" coords="346,55,517,80"/>
+<area shape="rect" id="node3" href="$group__STM32F7xx__HAL__Driver.html" title=" " alt="" coords="5,129,184,155"/>
+<area shape="rect" id="node7" title="HAL UART module driver." alt="" coords="232,129,289,155"/>
+<area shape="rect" id="node4" href="$group__UART__Exported__Functions.html" title=" " alt="" coords="339,104,524,129"/>
+<area shape="rect" id="node5" href="$group__UART__Exported__Types.html" title=" " alt="" coords="351,153,511,179"/>
+<area shape="rect" id="node6" href="$group__UART__Private__Functions.html" title=" " alt="" coords="345,203,518,228"/>
+<area shape="rect" id="node8" href="$group__UART__Exported__Constants.html" title=" " alt="" coords="337,252,525,277"/>
+</map>

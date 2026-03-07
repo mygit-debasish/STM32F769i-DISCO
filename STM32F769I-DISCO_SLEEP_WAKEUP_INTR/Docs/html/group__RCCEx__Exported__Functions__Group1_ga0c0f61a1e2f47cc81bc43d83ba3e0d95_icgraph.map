@@ -1,0 +1,6 @@
+<map id="HAL_RCCEx_PeriphCLKConfig" name="HAL_RCCEx_PeriphCLKConfig">
+<area shape="rect" id="node1" title=" " alt="" coords="260,56,471,83"/>
+<area shape="rect" id="node2" href="$group__RTC__Exported__Functions__Group1.html#gaee6eddaa309c8c9829f1ca794d8f99c5" title="RTC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="41,5,176,32"/>
+<area shape="rect" id="node3" href="$group__UART__Exported__Functions__Group1.html#ga0e553b32211877322f949b14801bbfa7" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="36,56,181,83"/>
+<area shape="rect" id="node4" href="$main_8c.html#a336c5acb34a801b2984e602b97ed7b73" title="Peripherals Common Clock Configuration." alt="" coords="5,107,212,133"/>
+</map>

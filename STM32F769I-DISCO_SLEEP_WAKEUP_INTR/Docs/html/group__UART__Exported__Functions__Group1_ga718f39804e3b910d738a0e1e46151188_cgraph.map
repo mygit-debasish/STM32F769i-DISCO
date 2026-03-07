@@ -1,0 +1,4 @@
+<map id="HAL_UART_MspDeInit" name="HAL_UART_MspDeInit">
+<area shape="rect" id="node1" title="UART MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="5,5,168,32"/>
+<area shape="rect" id="node2" href="$group__GPIO__Exported__Functions__Group1.html#gafe9c756b5aa18961032a3f8aa572959b" title=" " alt="" coords="216,5,349,32"/>
+</map>

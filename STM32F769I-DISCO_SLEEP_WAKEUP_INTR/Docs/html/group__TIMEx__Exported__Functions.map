@@ -1,0 +1,11 @@
+<map id="TIM Extended Exported Functions" name="TIM Extended Exported Functions">
+<area shape="rect" id="node1" href="$group__TIMEx.html" title="TIM Extended HAL module driver." alt="" coords="5,205,68,230"/>
+<area shape="rect" id="node2" title=" " alt="" coords="116,197,289,237"/>
+<area shape="rect" id="node3" href="$group__TIMEx__Exported__Functions__Group1.html" title="Timer Hall Sensor functions." alt="" coords="377,5,532,45"/>
+<area shape="rect" id="node4" href="$group__TIMEx__Exported__Functions__Group2.html" title="Timer Complementary Output Compare functions." alt="" coords="337,69,572,109"/>
+<area shape="rect" id="node5" href="$group__TIMEx__Exported__Functions__Group3.html" title="Timer Complementary PWM functions." alt="" coords="337,133,572,173"/>
+<area shape="rect" id="node6" href="$group__TIMEx__Exported__Functions__Group4.html" title="Timer Complementary One Pulse functions." alt="" coords="337,197,572,237"/>
+<area shape="rect" id="node7" href="$group__TIMEx__Exported__Functions__Group5.html" title="Peripheral Control functions." alt="" coords="378,261,531,301"/>
+<area shape="rect" id="node8" href="$group__TIMEx__Exported__Functions__Group6.html" title="Extended Callbacks functions." alt="" coords="379,325,530,365"/>
+<area shape="rect" id="node9" href="$group__TIMEx__Exported__Functions__Group7.html" title="Extended Peripheral State functions." alt="" coords="378,389,531,429"/>
+</map>

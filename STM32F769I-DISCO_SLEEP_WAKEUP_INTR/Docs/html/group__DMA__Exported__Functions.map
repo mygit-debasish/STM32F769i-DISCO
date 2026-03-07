@@ -1,0 +1,7 @@
+<map id="DMA Exported Functions" name="DMA Exported Functions">
+<area shape="rect" id="node1" href="$group__DMA__Exported__Functions__Group1.html" title="Initialization and de&#45;initialization functions." alt="" coords="336,5,528,45"/>
+<area shape="rect" id="node2" href="$group__DMA__Exported__Functions__Group2.html" title="I/O operation functions" alt="" coords="347,70,517,95"/>
+<area shape="rect" id="node3" href="$group__DMA__Exported__Functions__Group3.html" title="Peripheral State functions." alt="" coords="337,119,527,145"/>
+<area shape="rect" id="node4" href="$group__DMA.html" title="DMA HAL module driver." alt="" coords="5,70,59,95"/>
+<area shape="rect" id="node5" title="DMA Exported functions." alt="" coords="107,70,288,95"/>
+</map>

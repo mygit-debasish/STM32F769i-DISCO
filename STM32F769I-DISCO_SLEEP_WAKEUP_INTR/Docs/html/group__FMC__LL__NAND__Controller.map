@@ -1,0 +1,10 @@
+<map id="FMC NAND Controller" name="FMC NAND Controller">
+<area shape="rect" id="node1" href="$group__FMC__LL.html" title=" " alt="" coords="5,129,77,155"/>
+<area shape="rect" id="node2" title=" " alt="" coords="125,129,288,155"/>
+<area shape="rect" id="node3" href="$group__FMC__ECC__Page__Size.html" title=" " alt="" coords="349,5,496,31"/>
+<area shape="rect" id="node4" href="$group__FMC__ECC.html" title=" " alt="" coords="382,55,463,80"/>
+<area shape="rect" id="node5" href="$group__FMC__PCR__Memory__Type.html" title=" " alt="" coords="336,104,509,129"/>
+<area shape="rect" id="node6" href="$group__FMC__Wait__feature.html" title=" " alt="" coords="355,153,490,179"/>
+<area shape="rect" id="node7" href="$group__FMC__NAND__Data__Width.html" title=" " alt="" coords="337,203,508,228"/>
+<area shape="rect" id="node8" href="$group__FMC__NAND__Bank.html" title=" " alt="" coords="357,252,488,277"/>
+</map>

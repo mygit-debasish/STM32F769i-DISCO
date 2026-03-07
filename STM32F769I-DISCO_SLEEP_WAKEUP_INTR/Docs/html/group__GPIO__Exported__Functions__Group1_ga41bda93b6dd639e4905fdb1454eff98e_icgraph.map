@@ -1,0 +1,6 @@
+<map id="HAL_GPIO_Init" name="HAL_GPIO_Init">
+<area shape="rect" id="node1" title=" " alt="" coords="199,56,313,83"/>
+<area shape="rect" id="node2" href="$group__ADC__Exported__Functions__Group1.html#gaa30863492d5c3103e3e8ce8a63dadd07" title="ADC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="9,5,147,32"/>
+<area shape="rect" id="node3" href="$group__RTC__Exported__Functions__Group1.html#gaee6eddaa309c8c9829f1ca794d8f99c5" title="RTC MSP Initialization This function configures the hardware resources used in this example." alt="" coords="11,56,145,83"/>
+<area shape="rect" id="node4" href="$group__UART__Exported__Functions__Group1.html#ga0e553b32211877322f949b14801bbfa7" title="UART MSP Initialization This function configures the hardware resources used in this example." alt="" coords="5,107,151,133"/>
+</map>

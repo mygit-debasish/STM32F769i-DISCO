@@ -1,0 +1,52 @@
+<map id="Core/Src/custom.c" name="Core/Src/custom.c">
+<area shape="rect" id="node1" title=" " alt="" coords="3985,5,4123,32"/>
+<area shape="rect" id="node2" href="$custom_8h.html" title=" " alt="" coords="4013,80,4095,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="3697,155,3779,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="4197,379,4268,405"/>
+<area shape="rect" id="node5" title=" " alt="" coords="3895,155,3965,181"/>
+<area shape="rect" id="node6" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="3803,155,3870,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="2961,603,3035,629"/>
+<area shape="rect" id="node43" title=" " alt="" coords="4091,155,4166,181"/>
+<area shape="rect" id="node44" title=" " alt="" coords="4190,155,4257,181"/>
+<area shape="rect" id="node45" title=" " alt="" coords="4281,155,4368,181"/>
+<area shape="rect" id="node46" href="$stm32f769xx_8h.html" title="CMSIS Cortex&#45;M7 Device Peripheral Access Layer Header File." alt="" coords="4399,155,4519,181"/>
+<area shape="rect" id="node7" href="$stm32f7xx__hal_8h.html" title="This file contains all the functions prototypes for the HAL module driver." alt="" coords="2991,229,3122,256"/>
+<area shape="rect" id="node8" href="$stm32f7xx__hal__conf_8h.html" title=" " alt="" coords="2193,304,2358,331"/>
+<area shape="rect" id="node9" href="$stm32f7xx__hal__rcc_8h.html" title="Header file of RCC HAL module." alt="" coords="3758,379,3915,405"/>
+<area shape="rect" id="node13" href="$stm32f7xx__hal__exti_8h.html" title="Header file of EXTI HAL module." alt="" coords="3798,453,3961,480"/>
+<area shape="rect" id="node14" href="$stm32f7xx__hal__gpio_8h.html" title="Header file of GPIO HAL module." alt="" coords="1919,379,2085,405"/>
+<area shape="rect" id="node16" href="$stm32f7xx__hal__dma_8h.html" title="Header file of DMA HAL module." alt="" coords="151,379,317,405"/>
+<area shape="rect" id="node18" href="$stm32f7xx__hal__cortex_8h.html" title="Header file of CORTEX HAL module." alt="" coords="271,453,450,480"/>
+<area shape="rect" id="node19" href="$stm32f7xx__hal__adc_8h.html" title="Header file of ADC HAL extension module." alt="" coords="615,379,776,405"/>
+<area shape="rect" id="node21" href="$stm32f7xx__hal__crc_8h.html" title="Header file of CRC HAL module." alt="" coords="873,379,1030,405"/>
+<area shape="rect" id="node23" href="$stm32f7xx__hal__eth_8h.html" title="Header file of ETH HAL module." alt="" coords="989,453,1148,480"/>
+<area shape="rect" id="node24" href="$stm32f7xx__hal__flash_8h.html" title="Header file of FLASH HAL module." alt="" coords="1317,379,1487,405"/>
+<area shape="rect" id="node26" href="$stm32f7xx__hal__sdram_8h.html" title="Header file of SDRAM HAL module." alt="" coords="1526,379,1705,405"/>
+<area shape="rect" id="node28" href="$stm32f7xx__hal__i2c_8h.html" title="Header file of I2C HAL module." alt="" coords="1737,379,1894,405"/>
+<area shape="rect" id="node30" href="$stm32f7xx__hal__iwdg_8h.html" title="Header file of IWDG HAL module." alt="" coords="2135,453,2304,480"/>
+<area shape="rect" id="node31" href="$stm32f7xx__hal__ltdc_8h.html" title="Header file of LTDC HAL module." alt="" coords="2329,453,2491,480"/>
+<area shape="rect" id="node32" href="$stm32f7xx__hal__pwr_8h.html" title="Header file of PWR HAL module." alt="" coords="2516,453,2677,480"/>
+<area shape="rect" id="node33" href="$stm32f7xx__hal__qspi_8h.html" title="Header file of QSPI HAL module." alt="" coords="2702,453,2867,480"/>
+<area shape="rect" id="node34" href="$stm32f7xx__hal__rtc_8h.html" title="Header file of RTC HAL module." alt="" coords="2891,453,3046,480"/>
+<area shape="rect" id="node35" href="$stm32f7xx__hal__sai_8h.html" title="Header file of SAI HAL module." alt="" coords="3070,453,3227,480"/>
+<area shape="rect" id="node36" href="$stm32f7xx__hal__mmc_8h.html" title="Header file of MMC HAL module." alt="" coords="2414,379,2585,405"/>
+<area shape="rect" id="node37" href="$stm32f7xx__hal__spdifrx_8h.html" title="Header file of SPDIFRX HAL module." alt="" coords="2609,379,2792,405"/>
+<area shape="rect" id="node38" href="$stm32f7xx__hal__spi_8h.html" title="Header file of SPI HAL module." alt="" coords="2817,379,2974,405"/>
+<area shape="rect" id="node39" href="$stm32f7xx__hal__tim_8h.html" title="Header file of TIM HAL module." alt="" coords="2998,379,3158,405"/>
+<area shape="rect" id="node40" href="$stm32f7xx__hal__uart_8h.html" title="Header file of UART HAL module." alt="" coords="3183,379,3347,405"/>
+<area shape="rect" id="node41" href="$stm32f7xx__hal__wwdg_8h.html" title="Header file of WWDG HAL module." alt="" coords="3371,379,3547,405"/>
+<area shape="rect" id="node42" href="$stm32f7xx__hal__pcd_8h.html" title="Header file of PCD HAL module." alt="" coords="3572,379,3733,405"/>
+<area shape="rect" id="node10" href="$stm32f7xx__hal__def_8h.html" title="This file contains HAL common defines, enumeration, macros and structures definitions." alt="" coords="2039,528,2197,555"/>
+<area shape="rect" id="node12" href="$stm32f7xx__hal__rcc__ex_8h.html" title="Header file of RCC HAL Extension module." alt="" coords="3583,453,3763,480"/>
+<area shape="rect" id="node15" href="$stm32f7xx__hal__gpio__ex_8h.html" title="Header file of GPIO HAL Extension module." alt="" coords="1921,453,2110,480"/>
+<area shape="rect" id="node17" href="$stm32f7xx__hal__dma__ex_8h.html" title="Header file of DMA HAL extension module." alt="" coords="5,453,196,480"/>
+<area shape="rect" id="node20" href="$stm32f7xx__hal__adc__ex_8h.html" title=" " alt="" coords="474,453,658,480"/>
+<area shape="rect" id="node22" href="$stm32f7xx__hal__crc__ex_8h.html" title="Header file of CRC HAL extended module." alt="" coords="733,453,913,480"/>
+<area shape="rect" id="node25" href="$stm32f7xx__hal__flash__ex_8h.html" title="Header file of FLASH HAL Extension module." alt="" coords="1173,453,1365,480"/>
+<area shape="rect" id="node27" href="$stm32f7xx__ll__fmc_8h.html" title="Header file of FMC HAL module." alt="" coords="1440,453,1591,480"/>
+<area shape="rect" id="node29" href="$stm32f7xx__hal__i2c__ex_8h.html" title="Header file of I2C HAL Extended module." alt="" coords="1615,453,1795,480"/>
+<area shape="rect" id="node47" href="$core__cm7_8h.html" title="CMSIS Cortex&#45;M7 Core Peripheral Access Layer Header File." alt="" coords="4235,229,4332,256"/>
+<area shape="rect" id="node50" href="$system__stm32f7xx_8h.html" title="CMSIS Cortex&#45;M7 Device System Source File for STM32F7xx devices." alt="" coords="4504,229,4663,256"/>
+<area shape="rect" id="node48" href="$cmsis__version_8h.html" title="CMSIS Core(M) Version definitions." alt="" coords="4143,304,4269,331"/>
+<area shape="rect" id="node49" href="$cmsis__compiler_8h.html" title="CMSIS compiler generic header file." alt="" coords="4293,304,4428,331"/>
+</map>

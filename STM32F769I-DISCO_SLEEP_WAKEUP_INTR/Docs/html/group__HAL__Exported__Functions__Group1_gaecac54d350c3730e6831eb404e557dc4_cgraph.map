@@ -1,0 +1,12 @@
+<map id="HAL_Init" name="HAL_Init">
+<area shape="rect" id="node1" title="This function is used to initialize the HAL Library; it must be the first instruction to be executed ..." alt="" coords="5,183,81,209"/>
+<area shape="rect" id="node2" href="$stm32f7xx__hal__timebase__tim_8c.html#ga879cdb21ef051eb81ec51c18147397d5" title="This function configures the TIM6 as a time base source. The time source is configured to have 1ms ti..." alt="" coords="189,132,291,159"/>
+<area shape="rect" id="node9" href="$stm32f7xx__hal__msp_8c.html#gae4fb8e66865c87d0ebab74a726a6891f" title="Initialize the MSP." alt="" coords="189,183,291,209"/>
+<area shape="rect" id="node10" href="$group__CORTEX__Exported__Functions__Group1.html#gad9be53e08b1498adea006e5e037f238f" title=" " alt="" coords="129,233,351,260"/>
+<area shape="rect" id="node3" href="$group__CORTEX__Exported__Functions__Group1.html#gaaad4492c1b25e006d69948a15790352a" title=" " alt="" coords="413,5,574,32"/>
+<area shape="rect" id="node4" href="$group__CORTEX__Exported__Functions__Group1.html#ga8581a82025a4780efd00876a66e3e91b" title=" " alt="" coords="412,56,575,83"/>
+<area shape="rect" id="node5" href="$group__RCC__Exported__Functions__Group2.html#gabc95375dfca279d88b9ded9d063d2323" title=" " alt="" coords="399,107,588,133"/>
+<area shape="rect" id="node6" href="$group__RCC__Exported__Functions__Group2.html#gab3042d8ac5703ac696cabf0ee461c599" title=" " alt="" coords="403,157,584,184"/>
+<area shape="rect" id="node7" href="$group__TIM__Exported__Functions__Group1.html#ga1b288eb68eb52c97b8d187cdd6e9088f" title=" " alt="" coords="420,208,567,235"/>
+<area shape="rect" id="node8" href="$group__TIM__Exported__Functions__Group1.html#gae517d80e2ac713069767df8e8915971e" title=" " alt="" coords="406,259,581,285"/>
+</map>

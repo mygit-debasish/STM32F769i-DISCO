@@ -1,0 +1,17 @@
+<map id="FMC SDRAM Controller" name="FMC SDRAM Controller">
+<area shape="rect" id="node1" title=" " alt="" coords="125,333,296,359"/>
+<area shape="rect" id="node2" href="$group__FMC__SDRAM__Bank.html" title=" " alt="" coords="383,5,523,31"/>
+<area shape="rect" id="node3" href="$group__FMC__SDRAM__Internal__Banks__Number.html" title=" " alt="" coords="375,55,532,95"/>
+<area shape="rect" id="node4" href="$group__FMC__SDRAM__Mode__Status.html" title=" " alt="" coords="359,120,547,145"/>
+<area shape="rect" id="node6" href="$group__FMC__SDRAM__Read__Burst.html" title=" " alt="" coords="364,169,543,195"/>
+<area shape="rect" id="node7" href="$group__FMC__SDRAM__Command__Mode.html" title=" " alt="" coords="346,219,561,244"/>
+<area shape="rect" id="node8" href="$group__FMC__SDRAM__Memory__Bus__Width.html" title=" " alt="" coords="359,269,548,309"/>
+<area shape="rect" id="node9" href="$group__FMC__SDRAM__Clock__Period.html" title=" " alt="" coords="359,333,547,359"/>
+<area shape="rect" id="node10" href="$group__FMC__SDRAM__Row__Bits__number.html" title=" " alt="" coords="371,383,535,423"/>
+<area shape="rect" id="node11" href="$group__FMC__SDRAM__Write__Protection.html" title=" " alt="" coords="347,448,559,473"/>
+<area shape="rect" id="node12" href="$group__FMC__SDRAM__CAS__Latency.html" title=" " alt="" coords="359,497,547,523"/>
+<area shape="rect" id="node13" href="$group__FMC__SDRAM__Column__Bits__number.html" title=" " alt="" coords="360,547,547,587"/>
+<area shape="rect" id="node14" href="$group__FMC__SDRAM__Command__Target.html" title=" " alt="" coords="344,612,563,637"/>
+<area shape="rect" id="node15" href="$group__FMC__SDRAM__Read__Pipe__Delay.html" title=" " alt="" coords="367,662,539,702"/>
+<area shape="rect" id="node5" href="$group__FMC__LL.html" title=" " alt="" coords="5,333,77,359"/>
+</map>

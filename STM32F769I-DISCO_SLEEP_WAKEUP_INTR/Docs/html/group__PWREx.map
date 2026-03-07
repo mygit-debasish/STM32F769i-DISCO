@@ -1,0 +1,8 @@
+<map id="PWREx" name="PWREx">
+<area shape="rect" id="node1" href="$group__PWREx__Exported__Functions.html" title=" " alt="" coords="349,5,545,31"/>
+<area shape="rect" id="node2" href="$group__PWREx__Exported__Macro.html" title=" " alt="" coords="360,55,535,80"/>
+<area shape="rect" id="node3" title="PWR HAL module driver." alt="" coords="232,80,300,105"/>
+<area shape="rect" id="node5" href="$group__PWREx__Exported__Constants.html" title=" " alt="" coords="348,104,547,129"/>
+<area shape="rect" id="node6" href="$group__PWREx__Private__Macros.html" title=" " alt="" coords="363,153,532,179"/>
+<area shape="rect" id="node4" href="$group__STM32F7xx__HAL__Driver.html" title=" " alt="" coords="5,80,184,105"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="RTC_HandleTypeDef" name="RTC_HandleTypeDef">
+<area shape="rect" id="node1" title="RTC Handle Structure definition." alt="" coords="53,95,205,121"/>
+<area shape="rect" id="node2" href="$structRTC__TypeDef.html" title="Real&#45;Time Clock." alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node3" href="$structRTC__InitTypeDef.html" title="RTC Configuration Structure definition." alt="" coords="137,5,263,32"/>
+</map>

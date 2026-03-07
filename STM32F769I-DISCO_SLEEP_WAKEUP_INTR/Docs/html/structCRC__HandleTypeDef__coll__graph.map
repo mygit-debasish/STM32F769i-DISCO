@@ -1,0 +1,5 @@
+<map id="CRC_HandleTypeDef" name="CRC_HandleTypeDef">
+<area shape="rect" id="node1" title="CRC Handle Structure definition." alt="" coords="65,95,220,121"/>
+<area shape="rect" id="node2" href="$structCRC__InitTypeDef.html" title="CRC Init Structure definition." alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node3" href="$structCRC__TypeDef.html" title="CRC calculation unit." alt="" coords="160,5,269,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="RTC_AlarmTypeDef" name="RTC_AlarmTypeDef">
+<area shape="rect" id="node1" title="RTC Alarm structure definition." alt="" coords="5,95,151,121"/>
+<area shape="rect" id="node2" href="$structRTC__TimeTypeDef.html" title="RTC Time structure definition." alt="" coords="9,5,147,32"/>
+</map>

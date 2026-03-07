@@ -1,0 +1,9 @@
+<map id="MX_RTC_Init" name="MX_RTC_Init">
+<area shape="rect" id="node1" title="RTC Initialization Function." alt="" coords="5,107,108,133"/>
+<area shape="rect" id="node2" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="174,5,285,32"/>
+<area shape="rect" id="node4" href="$group__RTC__Exported__Functions__Group1.html#gaa6b53830aa3e2efaf210c0b1d3e5f4a4" title=" " alt="" coords="176,56,283,83"/>
+<area shape="rect" id="node5" href="$group__RTC__Exported__Functions__Group3.html#gafd78015b93b16dcb9e41a4655a7ea972" title=" " alt="" coords="156,107,303,133"/>
+<area shape="rect" id="node6" href="$group__RTC__Exported__Functions__Group2.html#ga6cf6c70227337a564ccef82f64d6268f" title=" " alt="" coords="160,157,299,184"/>
+<area shape="rect" id="node7" href="$group__RTC__Exported__Functions__Group2.html#gafe0fed98171a564decd2a6c9be9781d8" title=" " alt="" coords="159,208,299,235"/>
+<area shape="rect" id="node3" href="$group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6" title="Disable IRQ Interrupts." alt="" coords="351,5,457,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="writeASCIItoSerial" name="writeASCIItoSerial">
+<area shape="rect" id="node1" title="Sending formatted hex array to UART terminal." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node2" href="$group__UART__Exported__Functions__Group2.html#ga01a7a7ac3cf0a262814ba44ee7580ddb" title=" " alt="" coords="345,5,499,32"/>
+<area shape="rect" id="node3" href="$custom_8c.html#ad29d333a74fcf1bde3baf30e6d61189d" title=" " alt="" coords="192,31,297,57"/>
+</map>

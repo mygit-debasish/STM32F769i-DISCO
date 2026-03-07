@@ -1,0 +1,6 @@
+<map id="MX_CRC_Init" name="MX_CRC_Init">
+<area shape="rect" id="node1" title="CRC Initialization Function." alt="" coords="5,31,111,57"/>
+<area shape="rect" id="node2" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="159,5,269,32"/>
+<area shape="rect" id="node4" href="$group__CRC__Exported__Functions__Group1.html#ga23e7df2eaecf59615e13b2cad8b7185f" title=" " alt="" coords="159,56,269,83"/>
+<area shape="rect" id="node3" href="$group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6" title="Disable IRQ Interrupts." alt="" coords="317,5,424,32"/>
+</map>

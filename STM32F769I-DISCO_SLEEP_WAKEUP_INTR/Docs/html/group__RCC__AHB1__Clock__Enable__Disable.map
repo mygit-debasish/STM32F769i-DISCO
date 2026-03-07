@@ -1,0 +1,4 @@
+<map id="AHB1 Peripheral Clock Enable Disable" name="AHB1 Peripheral Clock Enable Disable">
+<area shape="rect" id="node1" href="$group__RCC__Exported__Macros.html" title=" " alt="" coords="5,13,168,38"/>
+<area shape="rect" id="node2" title="Enable or disable the AHB1 peripheral clock." alt="" coords="216,5,384,45"/>
+</map>

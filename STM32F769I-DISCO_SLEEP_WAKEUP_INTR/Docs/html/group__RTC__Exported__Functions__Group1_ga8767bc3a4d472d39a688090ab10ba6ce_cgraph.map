@@ -1,0 +1,4 @@
+<map id="HAL_RTC_MspDeInit" name="HAL_RTC_MspDeInit">
+<area shape="rect" id="node1" title="RTC MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="5,5,157,32"/>
+<area shape="rect" id="node2" href="$group__GPIO__Exported__Functions__Group1.html#gafe9c756b5aa18961032a3f8aa572959b" title=" " alt="" coords="205,5,339,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="SDRAM_HandleTypeDef" name="SDRAM_HandleTypeDef">
+<area shape="rect" id="node1" title="SDRAM handle Structure definition." alt="" coords="239,184,415,211"/>
+<area shape="rect" id="node2" href="$struct____DMA__HandleTypeDef.html" title="DMA handle Structure definition." alt="" coords="89,95,262,121"/>
+<area shape="rect" id="node3" href="$structDMA__Stream__TypeDef.html" title="DMA Controller." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node4" href="$structDMA__InitTypeDef.html" title="DMA Configuration Structure definition." alt="" coords="196,5,331,32"/>
+<area shape="rect" id="node5" href="$structFMC__SDRAM__InitTypeDef.html" title="FMC SDRAM Configuration Structure definition." alt="" coords="286,95,473,121"/>
+</map>

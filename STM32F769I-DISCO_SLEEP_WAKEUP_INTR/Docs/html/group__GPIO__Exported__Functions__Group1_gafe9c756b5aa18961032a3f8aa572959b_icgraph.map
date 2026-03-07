@@ -1,0 +1,6 @@
+<map id="HAL_GPIO_DeInit" name="HAL_GPIO_DeInit">
+<area shape="rect" id="node1" title=" " alt="" coords="216,56,349,83"/>
+<area shape="rect" id="node2" href="$group__ADC__Exported__Functions__Group1.html#ga39b0f8e80268ab3e660ead921ad4b22f" title="ADC MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="9,5,165,32"/>
+<area shape="rect" id="node3" href="$group__RTC__Exported__Functions__Group1.html#ga8767bc3a4d472d39a688090ab10ba6ce" title="RTC MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="11,56,163,83"/>
+<area shape="rect" id="node4" href="$group__UART__Exported__Functions__Group1.html#ga718f39804e3b910d738a0e1e46151188" title="UART MSP De&#45;Initialization This function freeze the hardware resources used in this example." alt="" coords="5,107,168,133"/>
+</map>

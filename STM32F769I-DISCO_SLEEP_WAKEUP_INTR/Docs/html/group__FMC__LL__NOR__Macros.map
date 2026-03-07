@@ -1,0 +1,4 @@
+<map id="FMC NOR/SRAM Macros" name="FMC NOR/SRAM Macros">
+<area shape="rect" id="node1" href="$group__FMC__LL__Private__Macros.html" title=" " alt="" coords="5,5,183,31"/>
+<area shape="rect" id="node2" title="macros to handle NOR device enable/disable and read/write operations" alt="" coords="231,5,408,31"/>
+</map>

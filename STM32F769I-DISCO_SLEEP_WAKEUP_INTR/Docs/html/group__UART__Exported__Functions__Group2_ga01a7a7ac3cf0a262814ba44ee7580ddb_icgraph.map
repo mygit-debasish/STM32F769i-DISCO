@@ -1,0 +1,13 @@
+<map id="HAL_UART_Transmit" name="HAL_UART_Transmit">
+<area shape="rect" id="node1" title=" " alt="" coords="535,93,688,120"/>
+<area shape="rect" id="node2" href="$custom_8h.html#a80f78262dc837b10e2314ea99aa2b042" title="Sending formatted hex array to UART terminal." alt="" coords="133,5,272,32"/>
+<area shape="rect" id="node4" href="$custom_8h.html#a97fc191c5ab6187d3d3d8e17dbc48d74" title=" " alt="" coords="337,43,469,69"/>
+<area shape="rect" id="node5" href="$custom_8h.html#a826bad477f1727eb0470286dea91d983" title=" " alt="" coords="338,93,469,120"/>
+<area shape="rect" id="node6" href="$custom_8h.html#ad29d333a74fcf1bde3baf30e6d61189d" title=" " alt="" coords="351,144,456,171"/>
+<area shape="rect" id="node11" href="$custom_8h.html#ad9d4c02d8805e5d23fdbe63a65287b05" title=" " alt="" coords="320,195,487,221"/>
+<area shape="rect" id="node3" href="$custom_8h.html#aa758d5a30eda452c5809841616ca03c9" title=" " alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node7" href="$custom_8h.html#ad8d7552f39000edae4e349cc16af4b7f" title=" " alt="" coords="145,68,261,95"/>
+<area shape="rect" id="node8" href="$custom_8h.html#aa3842c7e318438d17925d8541d418c96" title=" " alt="" coords="135,119,270,145"/>
+<area shape="rect" id="node9" href="$custom_8h.html#a22f0047ca1e195cb409fbb3540cb86e7" title=" " alt="" coords="163,169,242,196"/>
+<area shape="rect" id="node10" href="$custom_8h.html#a32beaac0a968d270386c75299e4f50db" title=" " alt="" coords="163,220,242,247"/>
+</map>

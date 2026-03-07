@@ -1,0 +1,6 @@
+<map id="MX_USART1_UART_Init" name="MX_USART1_UART_Init">
+<area shape="rect" id="node1" title="USART1 Initialization Function." alt="" coords="5,31,177,57"/>
+<area shape="rect" id="node2" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="229,5,340,32"/>
+<area shape="rect" id="node4" href="$group__UART__Exported__Functions__Group1.html#gabe47045024787099b0bfa82bbe7b0b6a" title=" " alt="" coords="225,56,344,83"/>
+<area shape="rect" id="node3" href="$group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6" title="Disable IRQ Interrupts." alt="" coords="392,5,499,32"/>
+</map>

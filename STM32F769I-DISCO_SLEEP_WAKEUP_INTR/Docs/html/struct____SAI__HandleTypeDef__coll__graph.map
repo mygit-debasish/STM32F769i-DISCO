@@ -1,0 +1,10 @@
+<map id="__SAI_HandleTypeDef" name="__SAI_HandleTypeDef">
+<area shape="rect" id="node1" title=" " alt="" coords="568,132,732,159"/>
+<area shape="rect" id="node2" href="$struct____DMA__HandleTypeDef.html" title="DMA handle Structure definition." alt="" coords="280,31,453,57"/>
+<area shape="rect" id="node3" href="$structDMA__Stream__TypeDef.html" title="DMA Controller." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node4" href="$structDMA__InitTypeDef.html" title="DMA Configuration Structure definition." alt="" coords="21,56,156,83"/>
+<area shape="rect" id="node5" href="$structSAI__InitTypeDef.html" title=" " alt="" coords="304,81,429,108"/>
+<area shape="rect" id="node6" href="$structSAI__FrameInitTypeDef.html" title=" " alt="" coords="283,132,450,159"/>
+<area shape="rect" id="node7" href="$structSAI__SlotInitTypeDef.html" title=" " alt="" coords="291,183,442,209"/>
+<area shape="rect" id="node8" href="$structSAI__Block__TypeDef.html" title=" " alt="" coords="293,233,440,260"/>
+</map>
