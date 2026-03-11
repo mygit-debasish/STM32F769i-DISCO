@@ -108,7 +108,6 @@ static void MX_GPIO_Init(void);
  */
 int main(void)
 {
-
 	/* USER CODE BEGIN 1 */
 
 	/* USER CODE END 1 */
@@ -136,7 +135,7 @@ int main(void)
 	/* USER CODE END SysInit */
 
 	/* Initialize all configured peripherals */
-	MX_GPIO_Init();
+	//MX_GPIO_Init();
 	MX_ADC1_Init();
 	MX_ADC3_Init();
 	MX_CRC_Init();
@@ -145,9 +144,20 @@ int main(void)
 	MX_USART1_UART_Init();
 	/* USER CODE BEGIN 2 */
 
-	GreenLED_init();
-	writetoSerial(&huart1, "Test SLEEP, WAKEUP & Interrupt !! \r\n");
-	Custom_TIM2_Initiazation();
+	/* USER2 LED Blinking pattern*/
+	uint32_t LED_PATTERN[2] = { GPIO_BSRR_BS5, GPIO_BSRR_BR5 };
+
+	/* Initializee USER2 LED Green (PJ5) */
+	STM32F769_USER2_LED_Init();
+
+	/* Initialize TIM1 with timebase (Hz) */
+	STM32F769_TIM1_Init(4);
+
+	/* Initialize DMA2_Stream5 for TIM1_UP */
+	STM32F769_DMA2_Stream5_Init(LED_PATTERN, 2);
+
+	/* Start TIM1 */
+	TIM1->CR1 |= TIM_CR1_CEN;
 
 	/* USER CODE END 2 */
 
@@ -156,14 +166,7 @@ int main(void)
 
 	while (1)
 	{
-		/* USER CODE END WHILE */
-		/* Verify if Event has been generated */
-		if (INTR_FLAG_ON)
-		{
-			ToggleGreenLED();
-			INTR_FLAG_ON = 0;
-		}
-		/* USER CODE BEGIN 3 */
+
 	}
 	/* USER CODE END 3 */
 }
