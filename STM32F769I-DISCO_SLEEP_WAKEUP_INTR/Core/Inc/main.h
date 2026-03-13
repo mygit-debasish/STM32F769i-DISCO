@@ -54,8 +54,6 @@ void Error_Handler(void);
 void MX_ADC1_Init(void);
 void MX_ADC3_Init(void);
 void MX_CRC_Init(void);
-void MX_ETH_Init(void);
-void MX_FMC_Init(void);
 void MX_I2C1_Init(void);
 void MX_I2C4_Init(void);
 void MX_LTDC_Init(void);
@@ -65,7 +63,6 @@ void MX_SAI1_Init(void);
 void MX_SAI2_Init(void);
 void MX_SDMMC2_MMC_Init(void);
 void MX_SPDIFRX_Init(void);
-void MX_SPI2_Init(void);
 void MX_TIM1_Init(void);
 void MX_TIM3_Init(void);
 void MX_TIM12_Init(void);
@@ -73,7 +70,6 @@ void MX_UART5_Init(void);
 void MX_USART1_UART_Init(void);
 void MX_USART6_UART_Init(void);
 void MX_USB_OTG_HS_PCD_Init(void);
-void MX_WWDG_Init(void);
 
 /* USER CODE BEGIN EFP */
 

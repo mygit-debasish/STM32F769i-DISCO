@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "string.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -26,6 +25,7 @@
 #include "custom_timer.h"
 
 extern volatile uint8_t INTR_FLAG_ON;
+extern volatile uint8_t M2M_TC_ON;
 
 /* UNICODE char : Ctrl + Shift + U
  * 270D:	Writing hand ✍
@@ -54,25 +54,6 @@ extern volatile uint8_t INTR_FLAG_ON;
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-#if defined ( __ICCARM__ ) /*!< IAR Compiler */
-#pragma location=0x2007c000
-ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
-#pragma location=0x2007c0a0
-ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
-
-#elif defined ( __CC_ARM )  /* MDK ARM Compiler */
-
-__attribute__((at(0x2007c000))) ETH_DMADescTypeDef  DMARxDscrTab[ETH_RX_DESC_CNT]; /* Ethernet Rx DMA Descriptors */
-__attribute__((at(0x2007c0a0))) ETH_DMADescTypeDef  DMATxDscrTab[ETH_TX_DESC_CNT]; /* Ethernet Tx DMA Descriptors */
-
-#elif defined ( __GNUC__ ) /* GNU Compiler */
-
-ETH_DMADescTypeDef DMARxDscrTab[ETH_RX_DESC_CNT] __attribute__((section(".RxDecripSection"))); /* Ethernet Rx DMA Descriptors */
-ETH_DMADescTypeDef DMATxDscrTab[ETH_TX_DESC_CNT] __attribute__((section(".TxDecripSection"))); /* Ethernet Tx DMA Descriptors */
-#endif
-
-ETH_TxPacketConfig TxConfig;
-
 ADC_HandleTypeDef hadc1;
 ADC_HandleTypeDef hadc3;
 
@@ -108,6 +89,7 @@ static void MX_GPIO_Init(void);
  */
 int main(void)
 {
+
 	/* USER CODE BEGIN 1 */
 
 	/* USER CODE END 1 */
@@ -135,7 +117,7 @@ int main(void)
 	/* USER CODE END SysInit */
 
 	/* Initialize all configured peripherals */
-	//MX_GPIO_Init();
+	MX_GPIO_Init();
 	MX_ADC1_Init();
 	MX_ADC3_Init();
 	MX_CRC_Init();
@@ -151,22 +133,56 @@ int main(void)
 	STM32F769_USER2_LED_Init();
 
 	/* Initialize TIM1 with timebase (Hz) */
-	STM32F769_TIM1_Init(4);
+	STM32F769_TIM1_Init(2);
 
+	/* Initialize TIM2 with timebase (Sec) */
+	//STM32F769_TIM2_Init(5);
 	/* Initialize DMA2_Stream5 for TIM1_UP */
 	STM32F769_DMA2_Stream5_Init(LED_PATTERN, 2);
 
-	/* Start TIM1 */
+	/* Start TIM1 & TIM2*/
 	TIM1->CR1 |= TIM_CR1_CEN;
+	//TIM2->CR1 |= TIM_CR1_CEN;
+
+	uint8_t *pSrcStr = "Jai Hanuman,Ghyan Gun Sargar";
+	uint8_t aDestStr[32];
+
+	/* Testing Memory to Memory Transfer */
+
+	uint8_t strHanuman[40];
+	uint8_t strCnt = 0;
+
+	STM32F769_DMA2_Stream1_Init(pSrcStr, aDestStr, strlen(pSrcStr) + 1);
 
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
-
 	while (1)
 	{
+		if (M2M_TC_ON)
+		{
+			//writeFormatData(&huart1, "NDTR: %ld \r\n", DMA2_Stream1->NDTR);
+			DMA2_Stream1->NDTR = strlen(pSrcStr) + 1;
+			DMA2_Stream1->CR |= DMA_SxCR_EN;
 
+			M2M_TC_ON = 0;
+		}
+
+#if 1
+	  memcpy(strHanuman, aDestStr, strlen(pSrcStr) + 1 );
+	  strCnt = strlen(strHanuman);
+	  strHanuman[strCnt++] = '\r';
+	  strHanuman[strCnt++] = '\n';
+	  strHanuman[strCnt] = '\0';
+
+	  HAL_UART_Transmit(&huart1, strHanuman, strCnt, 100);
+	  HAL_Delay(250);
+#endif
+
+		/* USER CODE END WHILE */
+
+		/* USER CODE BEGIN 3 */
 	}
 	/* USER CODE END 3 */
 }
@@ -597,6 +613,26 @@ static void MX_GPIO_Init(void)
 	HAL_GPIO_WritePin(GPIOJ, LD_USER1_Pin | DSI_RESET_Pin | LD_USER2_Pin,
 			GPIO_PIN_RESET);
 
+	/*Configure GPIO pins : RMII_TXD1_Pin RMII_TXD0_Pin RMII_TX_EN_Pin */
+	GPIO_InitStruct.Pin = RMII_TXD1_Pin | RMII_TXD0_Pin | RMII_TX_EN_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
+	HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : FMC_NBL1_Pin FMC_NBL0_Pin FMC_D5_Pin FMC_D6_Pin
+	 FMC_D8_Pin FMC_D11_Pin FMC_D4_Pin FMC_D7_Pin
+	 FMC_D9_Pin FMC_D12_Pin FMC_D10_Pin */
+	GPIO_InitStruct.Pin = FMC_NBL1_Pin | FMC_NBL0_Pin | FMC_D5_Pin | FMC_D6_Pin
+			| FMC_D8_Pin | FMC_D11_Pin | FMC_D4_Pin | FMC_D7_Pin | FMC_D9_Pin
+			| FMC_D12_Pin | FMC_D10_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF12_FMC;
+	HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+
 	/*Configure GPIO pin : CEC_Pin */
 	GPIO_InitStruct.Pin = CEC_Pin;
 	GPIO_InitStruct.Mode = GPIO_MODE_AF_OD;
@@ -604,6 +640,16 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	GPIO_InitStruct.Alternate = GPIO_AF4_CEC;
 	HAL_GPIO_Init(CEC_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : FMC_SDNCAS_Pin FMC_SDCLK_Pin FMC_A11_Pin FMC_A12_Pin
+	 FMC_A10_Pin FMC_BA1_Pin FMC_BA0_Pin */
+	GPIO_InitStruct.Pin = FMC_SDNCAS_Pin | FMC_SDCLK_Pin | FMC_A11_Pin
+			| FMC_A12_Pin | FMC_A10_Pin | FMC_BA1_Pin | FMC_BA0_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF12_FMC;
+	HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
 	/*Configure GPIO pins : LD_USER1_Pin DSI_RESET_Pin LD_USER2_Pin */
 	GPIO_InitStruct.Pin = LD_USER1_Pin | DSI_RESET_Pin | LD_USER2_Pin;
@@ -620,6 +666,16 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	HAL_GPIO_Init(GPIOJ, &GPIO_InitStruct);
 
+	/*Configure GPIO pins : FMC_D2_Pin FMC_D3_Pin FMC_D1_Pin FMC_D15_Pin
+	 FMC_D0_Pin FMC_D14_Pin FMC_D13_Pin */
+	GPIO_InitStruct.Pin = FMC_D2_Pin | FMC_D3_Pin | FMC_D1_Pin | FMC_D15_Pin
+			| FMC_D0_Pin | FMC_D14_Pin | FMC_D13_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF12_FMC;
+	HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
 	/*Configure GPIO pin : DFSDM_DATIN5_Pin */
 	GPIO_InitStruct.Pin = DFSDM_DATIN5_Pin;
 	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -628,10 +684,29 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Alternate = GPIO_AF3_DFSDM1;
 	HAL_GPIO_Init(DFSDM_DATIN5_GPIO_Port, &GPIO_InitStruct);
 
+	/*Configure GPIO pin : ARD_D13_SCK_Pin */
+	GPIO_InitStruct.Pin = ARD_D13_SCK_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+	HAL_GPIO_Init(ARD_D13_SCK_GPIO_Port, &GPIO_InitStruct);
+
 	/*Configure GPIO pins : NC4_Pin NC5_Pin uSD_Detect_Pin LCD_BL_CTRL_Pin */
 	GPIO_InitStruct.Pin = NC4_Pin | NC5_Pin | uSD_Detect_Pin | LCD_BL_CTRL_Pin;
 	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : FMC_NBL2_Pin D27_Pin D26_Pin FMC_NBL3_Pin
+	 D29_Pin D31_Pin D28_Pin D25_Pin
+	 D30_Pin D24_Pin */
+	GPIO_InitStruct.Pin = FMC_NBL2_Pin | D27_Pin | D26_Pin | FMC_NBL3_Pin
+			| D29_Pin | D31_Pin | D28_Pin | D25_Pin | D30_Pin | D24_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF12_FMC;
 	HAL_GPIO_Init(GPIOI, &GPIO_InitStruct);
 
 	/*Configure GPIO pins : NC3_Pin NC2_Pin NC1_Pin NC8_Pin
@@ -654,6 +729,38 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	GPIO_InitStruct.Alternate = GPIO_AF3_DFSDM1;
 	HAL_GPIO_Init(DFSDM_CKOUT_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pin : SPI2_NSS_Pin */
+	GPIO_InitStruct.Pin = SPI2_NSS_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+	HAL_GPIO_Init(SPI2_NSS_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : FMC_A0_Pin FMC_A1_Pin FMC_A2_Pin FMC_A3_Pin
+	 FMC_A4_Pin FMC_A5_Pin FMC_A6_Pin FMC_A9_Pin
+	 FMC_A7_Pin FMC_A8_Pin FMC_SDNRAS_Pin */
+	GPIO_InitStruct.Pin = FMC_A0_Pin | FMC_A1_Pin | FMC_A2_Pin | FMC_A3_Pin
+			| FMC_A4_Pin | FMC_A5_Pin | FMC_A6_Pin | FMC_A9_Pin | FMC_A7_Pin
+			| FMC_A8_Pin | FMC_SDNRAS_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF12_FMC;
+	HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : D23_Pin D21_Pin D22_Pin FMC_SDNME_Pin
+	 FMC_SDNE0_Pin FMC_SDCKE0_Pin D20_Pin FMC_D_7_Pin
+	 FMC_D19_Pin FMC_D16_Pin FMC_D18_Pin */
+	GPIO_InitStruct.Pin = D23_Pin | D21_Pin | D22_Pin | FMC_SDNME_Pin
+			| FMC_SDNE0_Pin | FMC_SDCKE0_Pin | D20_Pin | FMC_D_7_Pin
+			| FMC_D19_Pin | FMC_D16_Pin | FMC_D18_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF12_FMC;
+	HAL_GPIO_Init(GPIOH, &GPIO_InitStruct);
 
 	/*Configure GPIO pin : CEC_CLK_Pin */
 	GPIO_InitStruct.Pin = CEC_CLK_Pin;
@@ -691,6 +798,22 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Alternate = GPIO_AF3_TIM10;
 	HAL_GPIO_Init(ARD_D3_PWM_GPIO_Port, &GPIO_InitStruct);
 
+	/*Configure GPIO pins : RMII_MDC_Pin RMII_RXD0_Pin RMII_RXD1_Pin */
+	GPIO_InitStruct.Pin = RMII_MDC_Pin | RMII_RXD0_Pin | RMII_RXD1_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
+	HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : RMII_REF_CLK_Pin RMII_MDIO_Pin RMII_CRS_DV_Pin */
+	GPIO_InitStruct.Pin = RMII_REF_CLK_Pin | RMII_MDIO_Pin | RMII_CRS_DV_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+	GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
+	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
 	/*Configure GPIO pin : B_USER_Pin */
 	GPIO_InitStruct.Pin = B_USER_Pin;
 	GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
@@ -710,6 +833,14 @@ static void MX_GPIO_Init(void)
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
 	GPIO_InitStruct.Alternate = GPIO_AF13_DSI;
 	HAL_GPIO_Init(DSIHOST_TE_GPIO_Port, &GPIO_InitStruct);
+
+	/*Configure GPIO pins : ARDUINO_MISO_D12_Pin ARDUINO_MOSI_PWM_D11_Pin */
+	GPIO_InitStruct.Pin = ARDUINO_MISO_D12_Pin | ARDUINO_MOSI_PWM_D11_Pin;
+	GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+	GPIO_InitStruct.Pull = GPIO_NOPULL;
+	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	GPIO_InitStruct.Alternate = GPIO_AF5_SPI2;
+	HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 	/* USER CODE BEGIN MX_GPIO_Init_2 */
 
