@@ -6,7 +6,7 @@
   * 				: CBC based Secure Boot
   * 				: Secure Boot
   * 				: Retriving Crypto data from Flash
-  * 				: Rebasing
+  *
   ******************************************************************************
   * @attention
   *
