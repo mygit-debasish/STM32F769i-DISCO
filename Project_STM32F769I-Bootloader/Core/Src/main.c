@@ -5,6 +5,7 @@
   * @brief          : Main program body
   * 				: CBC based Secure Boot
   * 				: Secure Boot
+  * 				: Retriving Crypto data from Flash
   ******************************************************************************
   * @attention
   *
