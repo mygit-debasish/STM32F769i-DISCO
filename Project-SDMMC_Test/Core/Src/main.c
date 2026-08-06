@@ -169,6 +169,8 @@ int main(void)
   Init_NTPByte_Receive(&NtpRx);
   HAL_UART_Receive_IT(&huart1, &rxData, 1);
 
+  writetoSerial(&huart1, "[Running]  Crypto Application ... 🚀 \r\n");
+
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
