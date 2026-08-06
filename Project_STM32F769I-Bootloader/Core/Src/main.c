@@ -144,67 +144,30 @@ int main(void)
 
   /* Reading Firmware Header */
   FirmwareHeader_t *fwHeader = (FirmwareHeader_t*)FW_HEADER_ADDR;
-  //writeFormatData(&huart1, "Firmware Size:%d  HEX: (0x%08X) \r\n", fwHeader->firmwareSize, fwHeader->firmwareSize );
-  //writeFormatData(&huart1, "CA-Certificate Size:%d  HEX: (0x%08X) \r\n", fwHeader->caCertSize, fwHeader->caCertSize );
   writeFormatData(&huart1, "Firmware Magic (Flash): 	0x%08X \r\n", fwHeader->magic);
-  writeFormatData(&huart1, "Signature Length (Flash): 	0x%02X \r\n", fwHeader->signLen);
-  //writeHextoSerial(&huart1, "Firmware Hash: \r\n", fwHeader->hash, SHA256_LEN);
   writeFormatData(&huart1, "Version (Flash): 		0x%02X \r\n", fwHeader->firmwareVersion);
   writeFormatData(&huart1, "Revision (Flash): 		0x%02X \r\n", fwHeader->firmwareRevision);
-  //writeHextoSerial(&huart1, "Developer Signature: \r\n", fwHeader->signature, fwHeader->signLen);
-
-  /* Retriving Data from Micro SD Card */
-	TurnGreenLED_ON();
+  writeFormatData(&huart1, "Size of sructure :	%d \r\n", sizeof(FirmwareHeader_t));
 
 	/* Storing  CA Self signed Certificate in Flash if already not there */
-
 	uint8_t CA_certificate_der[555];
-	/* Verifying Signature starts */
-
-	int writeStatus = 0;
-	int status = 0;
-
-	uint8_t aDevSign[80];
-	uint8_t aDevCert[800];
-	uint8_t aFirmware[800];
-	uint8_t aFirmwareHash[SHA256_LEN];
-	uint8_t aFirmwareHashCalc[SHA256_LEN];
-
-	size_t DevSignLen = 0;
-	size_t DevCertLen = 0;
-	size_t FirmLen = 0;
-
 	Write_Certificate_Flash((uint8_t*) CA_CERT_ADDR,
-			CA_certificate_der,
-			sizeof(CA_certificate_der),
-			true); 						/* Verify before writing ✅  */
-
-	if (CryptoData_ReadFromSdCard(
-								aDevSign,
-								&DevSignLen,
-								aDevCert,
-								&DevCertLen,
-								aFirmware,
-								&FirmLen,
-								aFirmwareHash) != FR_OK)
-	{
-		writetoSerial(&huart1, "[❌] Error Reading Crypto Files \r\n");
-		return SUCK_ERROR;
-	}
-	writetoSerial(&huart1, "[✔] Success Reading Crypto Files \r\n");
-	TurnGreenLED_OFF();
+										CA_certificate_der,
+										sizeof(CA_certificate_der),
+										true); 						/* Verify before writing ✅  */
 
 	/*******************Verify Developer Certificate uisng CA Certificate ********************/
 	mbedtls_x509_crt devCert;
 	mbedtls_x509_crt_init(&devCert);
 	uint32_t ErrCode = 0;
+	int status = 0;
 
-	size_t ca_cert_len = fwHeader->caCertSize;
+	size_t ca_cert_len = fwHeader->caCertLen;
 	status = Verify_DeveloperCertificate(
 			(uint8_t*) CA_CERT_ADDR, /* From Flash */
-			fwHeader->caCertSize,
-			aDevCert,
-			DevCertLen,
+			fwHeader->caCertLen,
+			fwHeader->devCert,
+			fwHeader->devCertLen,
 			&ErrCode,
 			&devCert);
 
@@ -243,6 +206,8 @@ int main(void)
 
 			/* Verifying signed Firmware hash using Developers public key passsed as &devCert.pk below */
 			TurnGreenLED_ON();
+
+			uint8_t aFirmwareHashCalc[SHA256_LEN];
 
 			/* Generating Firmware hash of the Firmware located in 0x08080000 */
 			Calculate_SHA256((uint8_t*)APPLICATION_ADDR,  COMP_FW_LEN, aFirmwareHashCalc);

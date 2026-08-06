@@ -28,14 +28,14 @@
 #define FWHEADER_ADDR 		0x08180000UL
 
 #define HASH_LEN 		32U
-#define SIGN_LEN		72U
+#define SIGN_LEN		100U
 #define COMP_FW_LEN 	256U
 
 
 #define FW_HEADER_ADDR  0x081C0000UL	/* Firmware Header Location in FLASH */
 
 #define HASH_LEN 32U
-#define SIGN_LEN 100U
+#define CERT_LEN 800U
 #define COMP_FW_LEN 256U		/*Finite Firmware byte over which Hash calculated */
 
 /* NTP Data Receive State machine */
@@ -93,9 +93,11 @@ typedef struct
 		{
 			uint32_t magic;
 			uint32_t firmwareSize;
-			uint32_t caCertSize;
+			uint32_t caCertLen;
+			uint32_t devCertLen;
 			uint8_t hash[HASH_LEN];
 			uint8_t signature[SIGN_LEN];
+			uint8_t devCert[CERT_LEN];
 			uint8_t signLen;
 			uint8_t firmwareRevision;
 			uint8_t firmwareVersion;
