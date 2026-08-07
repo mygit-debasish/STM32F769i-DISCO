@@ -22,11 +22,10 @@
 #include <mbedtls/sha256.h>
 
 #define CA_CERT_ADDR  		0x08180000UL
-#define SHA256_LEN 			32U
-#define NTP_FRAME_LEN 		9U
 #define APPLICATION_ADDR 	0x08080000UL
 #define FWHEADER_ADDR 		0x08180000UL
 
+#define NTP_FRAME_LEN 		9U
 #define HASH_LEN 		32U
 #define SIGN_LEN		100U
 #define COMP_FW_LEN 	256U
@@ -152,11 +151,12 @@ static int Verify_Callback(void *ctx,
 
 void Calculate_SHA256(const uint8_t *data,
                       size_t data_len,
-                      uint8_t hash[SHA256_LEN]);
+                      uint8_t hash[HASH_LEN]);
 
 void Init_NTPByte_Receive(NtpBuffRx_t *rx);
 void NTP_ReceiveStateMachine(NtpBuffRx_t *rx, uint8_t data);
 void JumpToCryptoApplication();
+uint32_t DD_GetFlashSectorNumber(uint32_t flashAddress);
 
 
 #endif /* INC_MYCRYPTO_H_ */

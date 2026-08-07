@@ -142,16 +142,16 @@ int main(void)
   MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
 
-  writetoSerial(&huart1, "Welcome to Secure Boot-Loader \r\n");
+  writetoSerial(&huart1, "🙏  Welcome to Secure Boot-Loader 🙏\r\n");
 
   /* Reading Firmware Header */
   FirmwareHeader_t *fwHeader = (FirmwareHeader_t*)FW_HEADER_ADDR;
   writeFormatData(&huart1, "Firmware Magic (Flash): 	0x%08X \r\n", fwHeader->magic);
   writeFormatData(&huart1, "Version (Flash): 		0x%02X \r\n", fwHeader->firmwareVersion);
   writeFormatData(&huart1, "Revision (Flash): 		0x%02X \r\n", fwHeader->firmwareRevision);
-  writeFormatData(&huart1, "Size of sructure :	%d \r\n", sizeof(FirmwareHeader_t));
 
-	/* Storing  CA Self signed Certificate in Flash if already not there */
+	/* Storing  CA Self signed Certificate in Flash if already not there.
+	 * It must be stored by separate application in real Project */
 	uint8_t CA_certificate_der[555];
 	Write_Certificate_Flash((uint8_t*) CA_CERT_ADDR,
 										CA_certificate_der,
@@ -209,7 +209,7 @@ int main(void)
 			/* Verifying signed Firmware hash using Developers public key passsed as &devCert.pk below */
 			TurnGreenLED_ON();
 
-			uint8_t aFirmwareHashCalc[SHA256_LEN];
+			uint8_t aFirmwareHashCalc[HASH_LEN];
 
 			/* Generating Firmware hash of the Firmware located in 0x08080000 */
 			Calculate_SHA256((uint8_t*)APPLICATION_ADDR,  COMP_FW_LEN, aFirmwareHashCalc);
@@ -226,7 +226,7 @@ int main(void)
 					&devCert.pk,
 					MBEDTLS_MD_SHA256,
 					aFirmwareHashCalc,
-					SHA256_LEN,
+					HASH_LEN,
 					fwHeader->signature,
 					fwHeader->signLen);
 

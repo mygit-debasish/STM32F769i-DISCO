@@ -324,6 +324,12 @@ uint8_t EraseFlash(uint32_t SectorNum)
 
 void Write_Certificate_Flash(uint8_t *pAddr, uint8_t *pData, size_t dataLen, bool checkByte)
 {
+	uint32_t FlashSector = 0;
+
+	/* Find the sector CA Certificate located */
+	FlashSector = DD_GetFlashSectorNumber((uint32_t)pAddr);
+	writeFormatData(&huart1, "CA Certificate Flash Sector:	%d \r\n", FlashSector);
+			;
 	if((pAddr == NULL) || (pData == NULL) || (dataLen == 0))
 	{
 		return;
@@ -338,7 +344,7 @@ void Write_Certificate_Flash(uint8_t *pAddr, uint8_t *pData, size_t dataLen, boo
 
 	/* Erasing Flash Sector_6 */
 	writetoSerial(&huart1, "Erasing Flash ...\r\n");
-	if(EraseFlash(FLASH_SECTOR_10) != HAL_OK)
+	if(EraseFlash(FlashSector) != HAL_OK)
 	{
 		writetoSerial(&huart1, "Flash Erase Failed\r\n");
 		return;
@@ -474,9 +480,7 @@ void NTP_ReceiveStateMachine(NtpBuffRx_t *rx, uint8_t data)
 }
 
 
-
 typedef void (*JumpToApplication)(void);
-
 void JumpToCryptoApplication()
 {
 
@@ -504,5 +508,65 @@ void JumpToCryptoApplication()
 	CryptoApplication = (JumpToApplication)AppReset;
 	CryptoApplication();
 }
+
+uint32_t DD_GetFlashSectorNumber(uint32_t flashAddress)
+{
+	uint32_t sectorNum;
+
+	if ((flashAddress >= 0x08000000) && (flashAddress <= 0x08007FFF))
+	{
+		sectorNum = FLASH_SECTOR_0;
+	}
+	else if ((flashAddress >= 0x08008000) && (flashAddress <= 0x0800FFFF))
+	{
+		sectorNum = FLASH_SECTOR_1;
+	}
+	else if ((flashAddress >= 0x08010000) && (flashAddress <= 0x08017FFF))
+	{
+		sectorNum = FLASH_SECTOR_2;
+	}
+	else if ((flashAddress >= 0x08018000) && (flashAddress <= 0x0801FFFF))
+	{
+		sectorNum = FLASH_SECTOR_3;
+	}
+	else if ((flashAddress >= 0x08020000) && (flashAddress <= 0x0803FFFF))
+	{
+		sectorNum = FLASH_SECTOR_4;
+	}
+	else if ((flashAddress >= 0x08040000) && (flashAddress <= 0x0807FFFF))
+	{
+		sectorNum = FLASH_SECTOR_5;
+	}
+	else if ((flashAddress >= 0x08080000) && (flashAddress <= 0x080BFFFF))
+	{
+		sectorNum = FLASH_SECTOR_6;
+	}
+	else if ((flashAddress >= 0x080C0000) && (flashAddress <= 0x080FFFFF))
+	{
+		sectorNum = FLASH_SECTOR_7;
+	}
+	else if ((flashAddress >= 0x08100000) && (flashAddress <= 0x0813FFFF))
+	{
+		sectorNum = FLASH_SECTOR_8;
+	}
+	else if ((flashAddress >= 0x08140000) && (flashAddress <= 0x080BFFFF))
+	{
+		sectorNum = FLASH_SECTOR_9;
+	}
+	else if ((flashAddress >= 0x08180000) && (flashAddress <= 0x081BFFFF))
+	{
+		sectorNum = FLASH_SECTOR_10;
+	}
+	else if ((flashAddress >= 0x081C0000) && (flashAddress <= 0x081FFFFF))
+	{
+		sectorNum = FLASH_SECTOR_11;
+	}
+	else
+	{
+		sectorNum = 0xFF;
+	}
+	return sectorNum;
+}
+
 
 
